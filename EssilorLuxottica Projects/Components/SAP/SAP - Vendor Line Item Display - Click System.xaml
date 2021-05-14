@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,2643</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2435</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,24 +66,51 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2563" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2355" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="SAP - Vendor Line Item Display - Check Normal Items" Name="strComponentName" />
+      <Variable x:TypeArguments="x:String" Default="SAP - Vendor Line Item Display - Click System" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="583,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component check the Normal Items option&#xA;&#xA;Pre condition: Normal Items Checkbox exist&#xA;&#xA;Post condition: The Normal Items checkbox is checked&#xA;&#xA;Arguments: none" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="583,190" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the System button&#xA;&#xA;Pre condition: System button exist&#xA;&#xA;Post condition: Own jobs option exist&#xA;&#xA;Arguments: none" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="SAP - Vendor Line Item Display - Check Normal Items" sap:VirtualizedContainerService.HintSize="583,1928" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="SAP - Vendor Line Item Display - Click System" sap:VirtualizedContainerService.HintSize="583,1739" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Vendor Line Item Display" sap:VirtualizedContainerService.HintSize="561,376" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="78ca090655d639f066387ec365ac690a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:SetFocus DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Set Focus  Vendor Line Item Display" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+                <ui:SetFocus.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="67d399657b59e0015674fbd91ca0a5a1" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+                </ui:SetFocus.Target>
+              </ui:SetFocus>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:WindowScope>
       <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="561,198" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -91,23 +118,26 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument In is not applicable to this component" />
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument In is not applicable to this component" />
       </Sequence>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:UiElementExists DisplayName="Pre Condition Criteria" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
-          <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="87d11a154a00c7c4cf3700a55f1e021a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Vendor Line Item Display' /&gt;&lt;sap id='usr/chkX_NORM' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:UiElementExists.Target>
-        </ui:UiElementExists>
+        <ui:ImageFound DisplayName="Pre Condition Criteria" Found="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAQCAYAAABtPJ3XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHeSURBVEhL1VJLbsJADJ27lENwCsQFYMkJgDXcgl8WcAdYIJAKF8i+FQg2zQmqUkh4tcfOZAKoIBWJYulFtsfP8+yJ+dwd8EwwX98xnglmt4/xTDD7QwKL1RilYg0vikJljLf07GZ8oFNpo7O6dHYfmEN8xCEOUSeR9Vf2BdPWAFP1b0ckgteXzu4DEydHxJsJbZcEsp9DhG6lhsbCyy0GtP0J3smftrIXKQ1DW5vG8kpSl/axuWIb3Y320nu7w7bj8F1p31ytwiQJkCQhGlRQGkbkc+xhEaDQCl08o2aNheZJEL0+5UP0LDdCjzbc2yjX47jePs8Kzp+JaOXm7hAYEg0LJWeTav7IwwSYnfrcrErNUr4FCa6qYJfz+WmsNXyn3+NaTDBH+pyBxWhTju2GRhHWo7bdttSxuGzAJg0ouYxncbIIhuutguiXz2p/iwmGgHOImOZS4y0TAzRZzNavE9hBuLHlndaEaPKGvXoH25d5N8YEQwCWAcq0QWdUWKYt9OlisQh9GkBEia1HQXZOfN4825xegwf1jXN+/3krwJwdvsfreTUmE8F2C/kny8SKnQkhkVm9CmCzw2reXSYDu3od7g+Cr5k8qxP1QLsqON3KKR5lN274/9iTCQZ+AJsc6Xl6QC1kAAAAAElFTkSuQmCC" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
         <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,7 +146,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. Normal Items checkbox does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
+            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The System Button does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[strComponentName + &quot;: Passed pre condition check&quot;]" />
@@ -130,11 +160,24 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Check ContinueOnError="{x:Null}" Action="Check" DelayAfter="[in_IntDefaultDelay]" DelayBefore="[in_IntDefaultDelay]" DisplayName="Check Normal Items" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Check_1">
-          <ui:Check.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="87d11a154a00c7c4cf3700a55f1e021a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Vendor Line Item Display' /&gt;&lt;sap id='usr/chkX_NORM' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:Check.Target>
-        </ui:Check>
+        <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click System" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+          <ui:ClickImage.CursorPosition>
+            <ui:CursorPosition Position="Center">
+              <ui:CursorPosition.OffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetX>
+              <ui:CursorPosition.OffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetY>
+            </ui:CursorPosition>
+          </ui:ClickImage.CursorPosition>
+          <ui:ClickImage.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAQCAYAAACP4IauAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHZSURBVEhL1VJLbsJADJ27lENwCsQFYMkJIOtwC35ZwB1ggUAqXCD7ViDYNCeoSiHJqz3jTCaASlQWFEsvsj3+PNtRn4cTngXq6zvGs0AdjjGeBep4SqCxmaJWbeFFUGlM8Za9lcYHeo0ueptrb/dDneIUpzhEmwi2X1k3mPsjzEUvj8iQ3V57ux8qTlLEuxltlcixXkCEfqOFzsrxrUa09RneSZ/7+SVq41DHZra5jonL6mhftYv+TmpJ3/64a3O4V1a3EEtQSQIkSYgOPdbGEelsO1gFqPihtRdUqLMSP5Ghi5M/xEDnRhjQZgc7yXVybG03T5MtvhnCklvoASKbksKQxHxC8ac8SIDFuc6FmlQoy9cgsk0ha31ufmZLDPd0a9ywVUqfCzARKci23swkwnbS1Vs2cUwsH86j4Ywvz9M4WwLD1hYy9Ivnsb/YioBLGCLeWuw9JwXwmMjejTPQQ3BRnXceE8LjzTrxFrou55WzFQFYB6jT5qxQUJ2mH1JTIxGGRN4QMrKdBPk75fPGWZZ0BR7SFfa59Zd+gCUr3Mepecs2ZPX0xTPlRI1ckCCCebw0Z9GDit82MsPaeBnsj2RviTmlJfQguUk228Y5HiElN/s/5InIAj+DXqoRQzO72AAAAABJRU5ErkJggg==" />
+          </ui:ClickImage.Image>
+          <ui:ClickImage.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:ClickImage.Target>
+        </ui:ClickImage>
       </Sequence>
       <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <Sequence.Variables>
@@ -146,12 +189,12 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ImageFound DisplayName="Post Condition Criteria" Found="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+        <ui:ImageFound DisplayName="Post Condition Criteria" Found="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_2">
           <ui:ImageFound.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAPCAYAAAB+1zjIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALxSURBVFhH7VhBaxNBFN6fFBqam0cjIpUgxIIEMXgL9OQhiFijUKFQhSIEevFSwYskWFIrYitWSqq0h1gJpRhiIyFWBYsp0gjhOe/tzOzMZqbZkNbmkIEP9r355s0337xsSJytehOGOH44z9Z34erMMpy5ke+Kaw9WIP+hZiw0hA4ndvcFLLz9BI3G967Iv9mCy/dfGQudOtamIRSehkXT3CnAid58DjuVr9Bq/TVif/83FArLcHDwh3jIlwXwMI4DoUzJl0tCVsT/CzZjZb4E6XAE0mu++ROCNNY2ZmcfQyh0jnXsnsXYCBOuGDloxkoMkLG1Wh1GRy9ANHoFDg9bFmOZifNJr2v9xlLsgENQDsaNSCcwz/h8XToT4VwH4vNNyNK8t3ZRmUdo+1o7NgnxsLeGILlouMj79AXQg1wv5+k50tiJidvUrYXCa4qtxpI4bqbMIccVjYKIzy5AHoh4yhyPpVHIVefVtQK0hh8Qn63GYt7csWiKtqdPX1c9mq4cuwjF2Eq1DuXyDsRi12Fj4yOZuLr6nkwdH09Bu92mHPLMxrobkQg113HYHMRtRvQaExSzjPNq3mQs6hFNIOIe9WnGemDGLkC11oBSqUxGjoych7m5JzA2xoxicbG4SabiQB7yZQEsrnUne1ZzHZsqHRxUuCHWXwd9GItzsk6XetbYPZNYLzqajK3V98i4qalH9E5FQxGp1C3Ki4E8u7EM2LUJBrVj++0If4yXpV1mH8Z2dKyCoHpEzEAXznPOWWZUvfGTWweQyTwkc7Fzt7c/86w7kId8UYiKa8LE7akHt7wnexXO4yyKT+S8XOCOdd+nUguH9o6lmGu37N+ph33BicvC83FtZOy3H7+4de6YnJwh+AfyjjaWF1dzxBEfFV8+gPDOGLuM16Nv++DG0rNcK7j6R1m7NOP+vpjOK9Z753Mu3XsJK5tf6AdANyytVyA+qL+8BgzO03dVuHhnyfjfgB/IyxV3jYWG0DH8d+tE0IR/yPZEROL5ZpwAAAAASUVORK5CYII=" />
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAOCAYAAACVZ7SQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFfSURBVEhL5VSJDcMgDMxcDMQ8TMMyDOP6JcZJC1HVqs9JkWKMfT4b2OAP8F0iW4GUCjQ1VzGKrBm2betfKlfTXUWDkowvQ9XVu3hWZCspEFXIbxGKoOJfL1I6miMLT1bJ6d9tqBm7H2xuiBZSyM8TSjDtUxTJ9kn8JDfXpHF+OCIyknTQNDWREkgoNSWhbTFi931I0vVTc2bdH/hDw318yM2nz3wDT4VyTaQlDUJwkUjER/s0nnxeVLTP4PkP++81GuHjHjRzfZJk4XEgUV2cHWGKF7XnhVwReSjWTfaQyzVX99lxtXII63eSgHYqeBRsokbC60r9rEj/z1icpMNwjBEqUh2H5OF1ZRK6i3sCfnDwbvZtZ4XMRA7Tm9zJwG2PXyuuBopxE+siGeTUcccXSiAFDOsc45qzLFKaKFz7lWBQTPeF3H0dP593qH2c7ijyR7Escu/S4+8T8QeTBLgB+LfQqn244n4AAAAASUVORK5CYII=" />
           </ui:ImageFound.Image>
           <ui:ImageFound.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Vendor Line Item Display' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32768' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:ImageFound.Target>
         </ui:ImageFound>
         <If Condition="[boolPostConditionMet = False]" DisplayName="If Post Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_7">
@@ -162,21 +205,21 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. The Normal Items Option was not checked correctly.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
+            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. Own jobs option is not available.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[strComponentName + &quot;: Passed post condition check&quot;]" />
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="561,198" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument Out is not applicable to this component" />
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument Out is not applicable to this component" />
       </Sequence>
     </Sequence>
     <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
