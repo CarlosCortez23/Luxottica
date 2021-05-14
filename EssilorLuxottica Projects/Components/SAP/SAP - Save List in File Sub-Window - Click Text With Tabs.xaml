@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>376,1235</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>376,1254</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,18 +66,18 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="336,1155" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="336,1174" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="SAP - System Drop Down - Click List and Save" Name="strComponentName" />
+      <Variable x:TypeArguments="x:String" Default="SAP - Save List in File Sub-Window - Click Text With Tabs" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="314,190" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the List and  Save button of the System menu&#xA;&#xA;Pre condition: List option exist&#xA;&#xA;Post condition: Save List in file window appear&#xA;&#xA;Arguments: none" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="314,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component select the Text With Tabs option from Save List in file window&#xA;&#xA;Pre condition: Text With Tabs option exist&#xA;&#xA;Post condition: Text With Tabs option was selected correctly&#xA;&#xA;Arguments: none" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="SAP - System Drop Down - Click List and Save" sap:VirtualizedContainerService.HintSize="314,539" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="SAP - Save List in File Sub-Window - Click Text With Tabs" sap:VirtualizedContainerService.HintSize="314,539" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -91,7 +91,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument In is not applicable to this component" />
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument In is not applicable to this component" />
       </Sequence>
       <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
@@ -103,14 +103,11 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ImageFound DisplayName="Pre Condition Criteria" Found="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
-          <ui:ImageFound.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACdSURBVDhP7ZLhDcQgCIWZi4Gch2lYxmE4oXioMdcmxX/3JSTF1vd8WJDD/A1uCYNKglCEvf2i60hSvZ2pQohC+5fGvcFPMgyGBFxAAK5C4iYevdUm6XMDLoNAE7djZyaYDDqpI1KxGEexD5PvoFMJPU2iAVMJIR3XFcEu3h+3LAbDH2HVDHsCFR3Xfdu0b0mqhMEhXhlEoqiVwwlEPupRV6LDuHMhAAAAAElFTkSuQmCC" />
-          </ui:ImageFound.Image>
-          <ui:ImageFound.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32768' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:ImageFound.Target>
-        </ui:ImageFound>
+        <ui:UiElementExists DisplayName="Pre Condition Criteria" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+          <ui:UiElementExists.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="20cadaf60af3fd8764aa64a5af5937cd" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save list in file...' /&gt;&lt;sap id='usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[1,0]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:UiElementExists.Target>
+        </ui:UiElementExists>
         <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -119,7 +116,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The List option does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
+            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. Text With Tabs option does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[strComponentName + &quot;: Passed pre condition check&quot;]" />
@@ -133,8 +130,8 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click List" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-          <ui:ClickImage.CursorPosition>
+        <ui:Click ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Text With Tabs" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
                 <InArgument x:TypeArguments="x:Int32" />
@@ -143,50 +140,11 @@
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:CursorPosition.OffsetY>
             </ui:CursorPosition>
-          </ui:ClickImage.CursorPosition>
-          <ui:ClickImage.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAPCAYAAAAPr1RWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVDhP3ZHRDQQhCESpi4Koh2poxmJYZfFA93IxWf25SUhE5Tkg6EH9A7ywIpCKpx+1fWQtno4qyojK3w8X4D/1Fp6cC4EC3IEsFRy5xdThOlwoFVew2d3lfIB3bRtLA8UIyC5unHlXYfQuNsGFKSBtRLd1+2RfPjTB089b1Me68wbM+1421E0dBvyAXsGjk4isg85VL3pNvC8hJcQeAAAAAElFTkSuQmCC" />
-          </ui:ClickImage.Image>
-          <ui:ClickImage.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32768' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:ClickImage.Target>
-        </ui:ClickImage>
-        <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-          <ui:ClickImage.CursorPosition>
-            <ui:CursorPosition Position="Center">
-              <ui:CursorPosition.OffsetX>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetX>
-              <ui:CursorPosition.OffsetY>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetY>
-            </ui:CursorPosition>
-          </ui:ClickImage.CursorPosition>
-          <ui:ClickImage.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAQCAYAAADZNmvYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEtSURBVFhH7ZbBDcMgDEWZi4GYh2lYJsO4NoTwTSm9BKkpfhJSisslz9/EkbEFJnoTTPQmaNFHJO8cubp8pOMsGb+N+JoB1USB/xzS+ZNJIfCu8QRqOD/RKjnNY7FH9C3lvHyUnB8UvW4M7gyYAqVeznjKR4xloJ8Rb4kuEifkhjjFiVgwnUI7j8+6AYwVoOiRbL3T3dEqrReS1JpQaY46BeR5tC9gzVgBSq4LGedckBSCHD2+274kNzcEprb/qOvOGPej3/W3RCvgDs7Sa0Ix0cw5vqUR2gToE22sZiZZaLssTN3PcBfnNFeLeEdnylj2XotVdzRjX/BrmUkWoCLCWlfoUQs1Fhow0YxIxY+yAn51j+rGncg7njGvGn/DJfpK3mAZz8csboKJ3gKiF1MrNV4adyacAAAAAElFTkSuQmCC" />
-          </ui:ClickImage.Image>
-          <ui:ClickImage.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32768' idx='1' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:ClickImage.Target>
-        </ui:ClickImage>
-        <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
-          <ui:ClickImage.CursorPosition>
-            <ui:CursorPosition Position="Center">
-              <ui:CursorPosition.OffsetX>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetX>
-              <ui:CursorPosition.OffsetY>
-                <InArgument x:TypeArguments="x:Int32" />
-              </ui:CursorPosition.OffsetY>
-            </ui:CursorPosition>
-          </ui:ClickImage.CursorPosition>
-          <ui:ClickImage.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAANCAYAAADISGwcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADkSURBVDhPxZPdDcAgCISdi4Gcx2lcxmEo+FMOS9on0y8xaTXCcWDin3kKaIUpJU5rUeE2j06wCaicJWmu81eoOcvuObyAXn2csBUyV2RRUV8aF/KCRTG4Ns7HHeJ+ZSN0YAR/oQudATUhKKjZ7uO3F2Z8zoCr7kYrWxWp6OWafkf7Cp4ZTwGIqoZLvg22r5V2oVjlPszbncW7gNnDO/hdETogzDaoQHNsdyDGC5BArv/Q6179io4z0Bn2EvmEbgaE6EWFQxhbBmeSKKMDgibDYRzgK4jOP1twHifAKn+uU/zsAPMF7DWWq0CeAcUAAAAASUVORK5CYII=" />
-          </ui:ClickImage.Image>
-          <ui:ClickImage.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32768' idx='1' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:ClickImage.Target>
-        </ui:ClickImage>
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="20cadaf60af3fd8764aa64a5af5937cd" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save list in file...' /&gt;&lt;sap id='usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[1,0]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:Click.Target>
+        </ui:Click>
       </Sequence>
       <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <Sequence.Variables>
@@ -198,17 +156,14 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
-          <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ada52813ae28b1d9e2126e04f6eee202" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save list in file...' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:UiElementExists.Target>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:UiElementExists>
+        <ui:ImageFound DisplayName="Post Condition Criteria" Found="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAPCAYAAAD55tHOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOASURBVFhH7VjdSxRRFJ+/SH1YRZ+CiESCoIciX0QHQoxAKEFLqGiDBQkqfAiql3qxyGitRAoiIkg3lY0WRURWK/KjeglFNG1P8zsz93rv3TvLrKulsQs/Zs+5556v3/3YHefbz1UqY29CIyed/U6Jh+N06sZrauh+xk/I0Kt2ZfwdSHLuDE3Qwc4B6n00Qi+Hp2hq5gs/IUOPcXXivke6h2I1PZSyje0USozB5Fx7/IE6b72i8Yk5Wl5eofX1X7SxscFPyNBjHHaaAwR3HHKscKlPtY2MDMVraimeto0VCdkci89iGrfdOkslZ2R6kU5ceU7ZT/O0trZOuVyO1A9k6Gc/L9DJ+CANTy1aHfkFbJcQFTtIjkSJ5Kgops5Sybl4/z3dTo7SysoqE7G09IPa2y9RdfURfkKGHuN3B0ap+17K6ig8aTQGKwwQDQp0zUlp19cMuUexDWArrt+1zNXlWCITNMelJpvPoHFxzGV9xAVhqTOVqNX8c2xhWyAG523OUeAcv/qCxjJZPsbwaW3tosbGM9TVlaCWlrPkuh2sx/hYZpZgbzphhJAjGwUZTZXNTlKTl1RTv/ddmxth5wRF+358e5CQN1/aWXxyzCA+ZC23AgipUx9X4isxmEQRw+hF3EZO/YWnNDM7T5ubv5mEurqjVFVVLxGLNbAe47CDvemEYU0aBKg6yEqTOEF/ZcsmRSHHJMDbNSjc96HExFghclQyTDkM1jpV2BZHMKbOjbAYLDunkyorDzMxeLruOdb7Oydb3M5hnSO3bujWVo6kaOT480CGJAXFwg9iCn+yObtPjn60hZCjLVbkJOzVxbkFB3eIeucsLCxRW9t5qqg4xE/I4s6BXXF3jrlzDHBD/XumuJ3jwZsbS3jHgbQNYrFeP/N3nRzUoTU9hBzbXA/acaeAf60d6HhC09mvBX+tYRx2sFcdSIQE1u4cloWNcsRpxW3tCjHHCi4cd81WURzLOyYlCUpz8nzaGmdpUB4sdXJz1d0asnOQg7BLJZQ8eZGqp4cP/p9zM/kx0v8c2JkOJCxJ+9C3r59EoFMS4sRFIewrsA9tmO9D+5VjkKw1x/RpNM5sZCjYj1knFprwjTtUIUfoRVwxh3MVY7a+BeQA4g3B9QfvaPDtJKUn5/gJ+b98Q7APkPduDW8BTve+oWOXh/gJufxu7d9AI6eMvYRV+gPwyYdKIHLxUgAAAABJRU5ErkJggg==" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Save list in file...' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
         <If Condition="[boolPostConditionMet = False]" DisplayName="If Post Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -217,7 +172,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. Save List in file window is not available.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
+            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. Text With Tabs Option was not selected correctly.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[strComponentName + &quot;: Passed post condition check&quot;]" />
@@ -231,7 +186,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument Out is not applicable to this component" />
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument Out is not applicable to this component" />
       </Sequence>
     </Sequence>
     <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
