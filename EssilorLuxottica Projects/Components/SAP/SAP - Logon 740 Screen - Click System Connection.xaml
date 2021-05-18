@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_IntDefaultTimeoutL="5000" this:Main.in_StrConnection="01. PRD (RP1) - ECC - ERP Retail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_IntDefaultTimeoutL="5000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_IntDefaultDelay" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,2935</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,1840</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,7 +67,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2855" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,1760" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SAP - Logon 740 Screen - Click System Connection" Name="strComponentName" />
     </Sequence.Variables>
@@ -119,7 +119,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Pre Condition Criteria" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73e69b46f284a42d0fb8c261e6836238" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='132357568' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73e69b46f284a42d0fb8c261e6836238" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_6">
@@ -156,7 +156,7 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73e69b46f284a42d0fb8c261e6836238" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='132357568' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73e69b46f284a42d0fb8c261e6836238" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:Click.Target>
         </ui:Click>
       </Sequence>

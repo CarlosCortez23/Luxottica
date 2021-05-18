@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,1859</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2317</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,7 +67,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,1779" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2237" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SAP - Logon 740 Screen - Click Production" Name="strComponentName" />
     </Sequence.Variables>
@@ -78,7 +78,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="583,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the Production option&#xA;&#xA;Pre condition: Production option exists&#xA;&#xA;Post condition: The system connection string appear&#xA;&#xA;Arguments: in_StrConnection" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="SAP - Logon 740 Screen - Click Production" sap:VirtualizedContainerService.HintSize="583,1144" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="SAP - Logon 740 Screen - Click Production" sap:VirtualizedContainerService.HintSize="583,1602" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -94,7 +94,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument In is not applicable to this component" />
       </Sequence>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
@@ -165,7 +165,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0032330662beae61cd2fbeb1327e8956" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='132357568' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0032330662beae61cd2fbeb1327e8956" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">

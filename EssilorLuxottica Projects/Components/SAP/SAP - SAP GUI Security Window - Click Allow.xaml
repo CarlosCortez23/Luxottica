@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>683,2060</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>376,1254</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,25 +66,25 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="643,1980" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="336,1174" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="SAP - Find Variant Sub-Window - Click Execute" Name="strComponentName" />
+      <Variable x:TypeArguments="x:String" Default="SAP - SAP GUI Security Window - Click Allow" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="621,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the Execute button from Find Variant window&#xA;&#xA;Pre condition: Execute button exist&#xA;&#xA;Post condition: Variant name typed must be valid&#xA;&#xA;Arguments: none" />
-    <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="621,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="SAP - Find Variant Sub-Window - Click Execute" sap:VirtualizedContainerService.HintSize="621,1345" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="314,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the Allow button&#xA;&#xA;Pre condition: Allow button exist&#xA;&#xA;Post condition: The security window should be closed&#xA;&#xA;Arguments: none" />
+    <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
+    <Sequence DisplayName="SAP - SAP GUI Security Window - Click Allow" sap:VirtualizedContainerService.HintSize="314,539" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="599,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -93,7 +93,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument In is not applicable to this component" />
       </Sequence>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="599,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
@@ -105,7 +105,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Pre Condition Criteria" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d9349d0713f428fecaad6f5b685ae974" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Find Variant' /&gt;&lt;sap id='tbar[0]/btn[8]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9e10665335e258fd90af702473b8cd33" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP GUI Security' /&gt;&lt;wnd ctrlid='1018' title='&amp;amp;Allow' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
         </ui:UiElementExists>
         <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_6">
@@ -116,21 +116,21 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The Execute Button does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
+            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The Allow Button does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[strComponentName + &quot;: Passed pre condition check&quot;]" />
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="599,51" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Click ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Execute" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Allow" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
           <ui:Click.CursorPosition>
             <ui:CursorPosition Position="Center">
               <ui:CursorPosition.OffsetX>
@@ -142,67 +142,50 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d9349d0713f428fecaad6f5b685ae974" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Find Variant' /&gt;&lt;sap id='tbar[0]/btn[8]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9e10665335e258fd90af702473b8cd33" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP GUI Security' /&gt;&lt;wnd ctrlid='1018' title='&amp;amp;Allow' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:Click.Target>
         </ui:Click>
       </Sequence>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="599,710" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="583,632" sap2010:WorkflowViewState.IdRef="Sequence_21">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="561,508" sap2010:WorkflowViewState.IdRef="Sequence_18">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:Boolean" Name="boolPostConditionMet" />
-              </Sequence.Variables>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
-                <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="087acdc191855d30b7d89caec337db42" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Information' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-                </ui:UiElementExists.Target>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:UiElementExists>
-              <If Condition="[boolPostConditionMet = True]" DisplayName="If Post Condition is True" sap:VirtualizedContainerService.HintSize="539,238" sap2010:WorkflowViewState.IdRef="If_7">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <If.Then>
-                  <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. The Variant name typed is not valid.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
-                </If.Then>
-                <If.Else>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[strComponentName + &quot;: Passed post condition check&quot;]" />
-                </If.Else>
-              </If>
-            </Sequence>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="599,198" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="boolPostConditionMet" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
+          <ui:UiElementExists.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9e10665335e258fd90af702473b8cd33" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP GUI Security' /&gt;&lt;wnd ctrlid='1018' title='&amp;amp;Allow' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:UiElementExists.Target>
+        </ui:UiElementExists>
+        <If Condition="[boolPostConditionMet = True]" DisplayName="If Post Condition is True" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. The Security Window still open.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[strComponentName + &quot;: Passed post condition check&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument Out is not applicable to this component" />
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="621,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
+    <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
   </Sequence>
 </Activity>
