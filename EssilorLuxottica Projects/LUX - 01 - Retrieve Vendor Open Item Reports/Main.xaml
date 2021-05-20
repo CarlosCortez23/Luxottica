@@ -65,7 +65,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="* Performs Any Activities Required To Access/Extract Load Data&#xA;* Adds Data To The Queue" DisplayName="Load Items" sap:VirtualizedContainerService.HintSize="211,142" sap2010:WorkflowViewState.IdRef="State_3">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="* Performs Any Activities Required To Access/Extract Load Data&#xA;* Adds Data To The Queue" DisplayName="Load Items" sap:VirtualizedContainerService.HintSize="444,1016" sap2010:WorkflowViewState.IdRef="State_3">
       <State.Entry>
         <TryCatch DisplayName="TryCatch Load Items " sap:VirtualizedContainerService.HintSize="418,560" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -95,7 +95,8 @@
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSAPUsername">[strSAPUsername]</InArgument>
                   <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SstrSAPPassword">[sstrSAPPassword]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrInvoiceStatus">Parked</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrInvoiceStatus" />
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorOpenItemsReport_SAP_Report_Queue" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -174,7 +175,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Read Config&#xA;* Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="651,2035" sap2010:WorkflowViewState.IdRef="State_2">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Read Config&#xA;* Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="234,103" sap2010:WorkflowViewState.IdRef="State_2">
               <State.Entry>
                 <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="625,1606" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                   <sap:WorkflowViewStateService.ViewState>

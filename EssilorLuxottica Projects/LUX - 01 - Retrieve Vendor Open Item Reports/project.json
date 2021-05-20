@@ -1,6 +1,6 @@
 {
-  "name": "UiPath_REFrameWork",
-  "description": "UiPath_REFrameWork Template",
+  "name": "LUX - 01 - Retrieve Vendor Open Item Reports",
+  "description": "LUX - 01 - Retrieve Vendor Open Item Reports",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.5.3]",
