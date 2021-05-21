@@ -101,7 +101,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,582.5 300,636.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Login" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Login" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,9 +123,11 @@
                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt(in_Config.Item("TimeoutMedium").ToString)]</InArgument>
                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(in_Config.Item("TimeoutLong").ToString)]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSAPExecutable">[in_Config.Item("strSAPExecutable").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrConnection">[in_Config.Item("strRP1Connection").ToString]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSAPUsername">[in_StrSAPUsername]</InArgument>
                   <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SstrSAPPassword">[in_SstrSAPPassword]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFMSConnection">[in_Config.Item("strRP1Connection").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrAFSConnection">[in_Config.Item("strLUPConnection").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSystem">[dtReportsDetail(intCounter)(0).tostring]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -813,7 +815,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,205.5 300,244.02</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Reports Detail File" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Reports Detail File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config.Item("strReportsDetailSheet").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_Config.Item("strReportsDetailFileName").ToString]</InArgument>
