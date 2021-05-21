@@ -1,15 +1,20 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_IntDefaultTimeoutL="5000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_IntDefaultTimeoutL="5000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_IntDefaultDelay" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutM" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutL" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_SstrSAPPassword" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_StrConnection" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Main.in_StrConnection>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Main.in_StrConnection>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,1995</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2349</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -38,7 +43,6 @@
       <x:String>UiPath.Terminal</x:String>
       <x:String>UiPath.Terminal.Service</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Net</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -68,37 +72,18 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,1915" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2269" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="SAP - Logon Credential Screen - Type Password" Name="strComponentName" />
+      <Variable x:TypeArguments="x:String" Default="SAP - Logon 740 Screen - Click Italy" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="583,190" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component type password into SAP login screen&#xA;&#xA;Pre condition: Password field exist&#xA;&#xA;Post condition: Easy Access Acreen exist&#xA;&#xA;Arguments: in_SstrSAPPassword" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="583,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component make click on the Italy option&#xA;&#xA;Pre condition: Italy option exists&#xA;&#xA;Post condition: The system connection string appear&#xA;&#xA;Arguments: in_StrConnection" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="583,262" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_23">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="ss:SecureString">[in_SstrSAPPassword]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="ss:SecureString">[new System.Net.NetworkCredential(string.Empty, "Welcome1").SecurePassword]</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <Sequence DisplayName="SAP - Logon Credential Screen - Type Password" sap:VirtualizedContainerService.HintSize="583,997" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="SAP - Logon 740 Screen - Click Italy" sap:VirtualizedContainerService.HintSize="583,1634" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,30 +97,26 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[String.IsNullOrEmpty(in_SstrSAPPassword.ToString)]" DisplayName="if in_SstrSAPPassword is null" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_8">
-          <If.Then>
-            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_SstrSAPPassword Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_13" />
-          </If.Then>
-          <If.Else>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Input Argument  in_SstrSAPPassword Is Not Null And Is Populated&quot;]" />
-          </If.Else>
-        </If>
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument In is not applicable to this component" />
       </Sequence>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:UiElementExists DisplayName="Pre Condition Criteria" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
-          <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="45fc82e2b1b529c275cb95ecf946d3f1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;&lt;sap id='usr/pwdRSYST-BCODE' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:UiElementExists.Target>
-        </ui:UiElementExists>
+        <ui:ImageFound DisplayName="Pre Condition Criteria" Found="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+          <ui:ImageFound.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAQCAYAAACP4IauAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVEhL7ZNRCoMwDIZ7LHseh5cZY1cRYTcRXzzIwIdlJm1q0tZuDmQO9vCDbRLy5Tc19+kBv6I/7F76Puxwhcpeoc/FImnYrgFjTFDdiVhJqq6BdhrhbC2ch0xurI9gsciIBvH5lSgfQfG8Nyy5w81Q2HCDuwHW1ck/ZGaY9mLVXXUZlzrbQB33Qp5oCLEGvgknZJKL2uIs5fo4O4v9TreQ055So9TO9jj93KTy07/tKmoLrIwz7HSDOtTL70V6DZSTWPDJGuA5D0tmeCNM7OwcRzdxPShPuMwKsLkELpZ3q3oFq95Ezln+xv1NB0UtzlIzmaSdRfDiDivYdOeUGbKXhKUh1vuonXXT82/SzYqwqs4DE5C/ozo3vDsL9xRsOqSUhv268g+LdSjYtYfFOpizJT3gCdR7c75YMgObAAAAAElFTkSuQmCC" />
+          </ui:ImageFound.Image>
+          <ui:ImageFound.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:ImageFound.Target>
+        </ui:ImageFound>
         <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -144,35 +125,42 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The password field does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
+            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(strComponentName+&quot;: Failed pre condition check. The Italy Option does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[strComponentName + &quot;: Passed pre condition check&quot;]" />
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="561,230" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:TypeSecureText DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Type Password" EmptyField="True" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[in_SstrSAPPassword]" SendWindowMessages="False" SimulateType="False">
-          <ui:TypeSecureText.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="45fc82e2b1b529c275cb95ecf946d3f1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;&lt;sap id='usr/pwdRSYST-BCODE' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:TypeSecureText.Target>
-        </ui:TypeSecureText>
-        <ui:SendHotkey DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Send Enter Key" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
-          <ui:SendHotkey.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ca36921cbabe7605789a2b60320f64ab" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP' /&gt;&lt;sap id='usr/pwdRSYST-BCODE' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
-          </ui:SendHotkey.Target>
-        </ui:SendHotkey>
+        <ui:ClickImage ContinueOnError="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Click Italy" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+          <ui:ClickImage.CursorPosition>
+            <ui:CursorPosition Position="Center">
+              <ui:CursorPosition.OffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetX>
+              <ui:CursorPosition.OffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:CursorPosition.OffsetY>
+            </ui:CursorPosition>
+          </ui:ClickImage.CursorPosition>
+          <ui:ClickImage.Image>
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAAPCAYAAACSol3eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEySURBVEhL1ZNRCoMwDIZ7LHsexcsM8SoieBPZyw4y8MHMpE2XtFXnYEwffrBNYr78bc1zmuEK+j/ovYXCtjDmYkIatK/BGBNU9iK2JVVXQzc94GYt3O6Z3FiHQbHAiJ/H6z1RPkLi+peg5Ao3QmGzA64GUFcnT8YsIF1j1V7RPN51toYy7oU8YgBx9L4BB6PEXR1xlHJ9nB3FftUQcrpKg6s7OuLUS4PCT/2xm6gjoDLOoNMAZaiX30766JWDmPzN0eM6D0pGeBNM7OgSRxfxSlCecBcVQHNBLpR7q9oDVW8g5yh/431Nh3w7So1kgnYUoTfvrAJN75gyQvaSoDRAvo+6o25qPhrdaBNU1XlYgvF7VOcGd2vhmgJNB2Rp0L8rfUSsU4Hm3gnrZI6u6yKgM7wAJpePw5Uhx7EAAAAASUVORK5CYII=" />
+          </ui:ClickImage.Image>
+          <ui:ClickImage.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+          </ui:ClickImage.Target>
+        </ui:ClickImage>
       </Sequence>
       <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPostConditionMet" />
-          <Variable x:TypeArguments="ui:GenericValue" Name="strPassword" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,10 +170,16 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6b4f073630fd15225e7ef6ce5f47bcd1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access*' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0032330662beae61cd2fbeb1327e8956" Selector="[&quot;&lt;wnd app='saplogon.exe' cls='#32770' title='SAP Logon 760' /&gt;&lt;wnd ctrlid='5002' title='myContainer' /&gt;&lt;wnd ctrlid='1008' /&gt;&lt;ctrl name='&quot;+in_StrConnection+&quot;' role='list item' /&gt;&quot;]" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:UiElementExists>
-        <If Condition="[boolPostConditionMet=False]" DisplayName="If Post Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_7">
+        <If Condition="[boolPostConditionMet = False]" DisplayName="If Post Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,7 +187,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. The Easy Access Screen does not exist.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
+            <Throw DisplayName="Throw Post Condition EXC" Exception="[new Exception(strComponentName + &quot;: Failed post condition check. The System Connection is not available.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
           </If.Then>
           <If.Else>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[strComponentName + &quot;: Passed post condition check&quot;]" />
