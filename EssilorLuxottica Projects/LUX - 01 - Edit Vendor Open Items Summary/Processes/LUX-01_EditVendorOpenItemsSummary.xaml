@@ -212,7 +212,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,297.04 300,354.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Split SAP Report File Path" sap:VirtualizedContainerService.HintSize="336,868" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Split SAP Report File Path" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -280,7 +280,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,432.5 300,476.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Format File - Edit and Format Vendor Report File" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+              <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Format File - Edit and Format Vendor Report File" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,6 +308,7 @@
                         <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateFilePath">[in_Config.Item("strCopyToPath").ToString]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateFileName">[in_Config.Item("strCopyToName").ToString]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateSheetName">[in_Config.Item("strTemplateSheetName").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrOutputFolderPath">[in_Config.Item("strOutputFolderPath").ToString]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
