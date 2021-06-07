@@ -171,7 +171,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Read Config&#xA;* Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="651,1761" sap2010:WorkflowViewState.IdRef="State_2">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="* Read Config&#xA;* Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="234,103" sap2010:WorkflowViewState.IdRef="State_2">
               <State.Entry>
                 <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="625,1332" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                   <sap:WorkflowViewStateService.ViewState>

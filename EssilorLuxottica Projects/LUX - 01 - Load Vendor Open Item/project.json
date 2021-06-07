@@ -1,12 +1,12 @@
 {
-  "name": "LUX - 01 - Retrieve Vendor Open Item Reports",
-  "description": "LUX - 01 - Retrieve Vendor Open Item Reports",
+  "name": "LUX - 01 - Load Vendor Open Item",
+  "description": "LUX - 01 - Load Vendor Open Item",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.5.4]",
     "UiPath.Mail.Activities": "[1.4.1]",
-    "UiPath.System.Activities": "[18.4.1]",
-    "UiPath.UIAutomation.Activities": "[18.4.2]"
+    "UiPath.System.Activities": "[19.4.1]",
+    "UiPath.UIAutomation.Activities": "[19.4.2]"
   },
   "schemaVersion": "3.2",
   "studioVersion": "17.1",
