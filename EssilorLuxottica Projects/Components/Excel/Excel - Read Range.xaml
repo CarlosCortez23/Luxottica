@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,3401</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1059,3576</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,7 +65,7 @@
       <AssemblyReference>UiPath.Cryptography</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Logic Component" sap:VirtualizedContainerService.HintSize="1039,3336" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="Logic Component" sap:VirtualizedContainerService.HintSize="1019,3496" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Excel - Read Range" Name="strComponentName" />
     </Sequence.Variables>
@@ -83,14 +83,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Sequence DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="997,2618" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="997,2746" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="955,1707" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="875,1739" sap2010:WorkflowViewState.IdRef="Sequence_5">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
@@ -105,7 +105,7 @@
             <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Incoming Argument in_StrSheetName Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </If.Then>
           <If.Else>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Incoming Argument in_StrSheetName (Ref: &quot; &amp; in_StrSheetName &amp; &quot;) Is Not Null And Is Populated&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Incoming Argument in_StrSheetName (Ref: &quot; &amp; in_StrSheetName &amp; &quot;) Is Not Null And Is Populated&quot;]" />
           </If.Else>
         </If>
         <If Condition="[String.IsNullOrWhiteSpace(in_StrWorkbookFileName) = True]" DisplayName="If in_StrWorkbookFileName Is Null Or WhiteSpace" sap:VirtualizedContainerService.HintSize="579,239" sap2010:WorkflowViewState.IdRef="If_3">
@@ -139,52 +139,52 @@
             <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(&quot;Pre-Condition Failed, Provided Workbook Does Not Exist At The Given Path&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
           </If.Then>
           <If.Else>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="Pre-Condition Successful, Provided Workbook Exists At The Given Path" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[&quot;Pre-Condition Successful, Provided Workbook Exists At The Given Path&quot;]" />
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="955,408" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="875,440" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[in_BoolAddHeaders = True]" DisplayName="If in_BoolAddHeaders Is True" sap:VirtualizedContainerService.HintSize="913,316" sap2010:WorkflowViewState.IdRef="If_6">
+        <If Condition="[in_BoolAddHeaders = True]" DisplayName="If in_BoolAddHeaders Is True" sap:VirtualizedContainerService.HintSize="853,316" sap2010:WorkflowViewState.IdRef="If_6">
           <If.Then>
-            <ui:ExcelApplicationScope DisplayName="Excel Application Scope (in_WorkbookFilePath, in_StrWorkbookFileName)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Password="[in_StrWorkbookPassword]" Visible="False" WorkbookPath="[Path.Combine(in_StrWorkbookFilePath, in_strWorkbookFileName)]">
+            <ui:ExcelApplicationScope DisplayName="Excel Application Scope (in_WorkbookFilePath, in_StrWorkbookFileName)" sap:VirtualizedContainerService.HintSize="414,168" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Password="[in_StrWorkbookPassword]" Visible="False" WorkbookPath="[Path.Combine(in_StrWorkbookFilePath, in_strWorkbookFileName)]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <ui:ExcelReadRange AddHeaders="True" DataTable="[out_DtExtractedData]" DisplayName="Read Range (All) With Headers" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="[in_StrRange]" SheetName="[in_StrSheetName]" />
+                  <ui:ExcelReadRange AddHeaders="True" DataTable="[out_DtExtractedData]" DisplayName="Read Range (All) With Headers" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="[in_StrRange]" SheetName="[in_StrSheetName]" />
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
             </ui:ExcelApplicationScope>
           </If.Then>
           <If.Else>
-            <ui:ExcelApplicationScope DisplayName="Excel Application Scope (in_WorkbookFilePath, in_StrWorkbookFileName)" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Password="[in_StrWorkbookPassword]" Visible="False" WorkbookPath="[Path.Combine(in_StrWorkbookFilePath, in_strWorkbookFileName)]">
+            <ui:ExcelApplicationScope DisplayName="Excel Application Scope (in_WorkbookFilePath, in_StrWorkbookFileName)" sap:VirtualizedContainerService.HintSize="414,168" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" Password="[in_StrWorkbookPassword]" Visible="False" WorkbookPath="[Path.Combine(in_StrWorkbookFilePath, in_strWorkbookFileName)]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <ui:ExcelReadRange AddHeaders="False" DataTable="[out_DtExtractedData]" DisplayName="Read Range (All) Without Headers" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[in_StrRange]" SheetName="[in_StrSheetName]" />
+                  <ui:ExcelReadRange AddHeaders="False" DataTable="[out_DtExtractedData]" DisplayName="Read Range (All) Without Headers" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" Range="[in_StrRange]" SheetName="[in_StrSheetName]" />
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
             </ui:ExcelApplicationScope>
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="955,331" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence DisplayName="Post Condition Check" sap:VirtualizedContainerService.HintSize="875,363" sap2010:WorkflowViewState.IdRef="Sequence_7">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[out_DtExtractedData is Nothing]" DisplayName="If out_DtExtractedData Is Null Or Not Populated" sap:VirtualizedContainerService.HintSize="579,239" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[out_DtExtractedData is Nothing]" DisplayName="If out_DtExtractedData Is Null Or Not Populated" sap:VirtualizedContainerService.HintSize="559,239" sap2010:WorkflowViewState.IdRef="If_2">
           <If.Then>
             <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Outgoing Argument out_DtExtractedData Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
           </If.Then>
