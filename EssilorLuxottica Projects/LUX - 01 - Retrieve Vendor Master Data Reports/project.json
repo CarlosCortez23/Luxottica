@@ -3,6 +3,7 @@
   "description": "LUX - 01 - Retrieve Vendor Master Data Reports",
   "main": "Main.xaml",
   "dependencies": {
+    "BalaReva.Excel.Activities": "2020.3.3",
     "UiPath.Excel.Activities": "[2.5.3]",
     "UiPath.Mail.Activities": "[1.4.0]",
     "UiPath.System.Activities": "[18.3.6897.22524]",
