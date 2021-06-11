@@ -1,0 +1,183 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Excel___RenameWorkSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:bew="clr-namespace:BalaReva.Excel.WorkBook;assembly=BalaReva.Excel" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrSheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrWorkbookFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrWorkbookFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrNewSheet" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>645,2265</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>BalaReva.Excel.WorkBook</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>BalaReva.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Excel - Rename Sheet" sap:VirtualizedContainerService.HintSize="605,2145" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="Excel - Rename Sheet" Name="strComponentName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Excel - Rename Sheet" sap:VirtualizedContainerService.HintSize="583,2021" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="561,267" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  &#xA;&#xA;* Rename a sheet from a workbook&#xA;&#xA;Pre condition:&#xA;&#xA;* Check for existence of the required Workbook, if not found, throw AE. &#xA;&#xA;Post condition:&#xA;&#xA;*NA" />
+      <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="561,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,987" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[String.IsNullOrWhiteSpace( in_StrNewSheet) = True]" DisplayName="If in_StrNewSheet Is Null Or WhiteSpace" sap:VirtualizedContainerService.HintSize="539,51" sap2010:WorkflowViewState.IdRef="If_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Incoming Argument  in_StrNewSheet Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Incoming Argument  in_StrNewSheet (Ref: &quot; &amp;  in_StrNewSheet &amp; &quot;) Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrWhiteSpace(  in_StrSheetName) = True]" DisplayName="Ifin_StrSheetName Is Null Or WhiteSpace" sap:VirtualizedContainerService.HintSize="539,51" sap2010:WorkflowViewState.IdRef="If_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Incoming Argument  in_StrNewSheet Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Incoming Argument  in_StrSheetName (Ref: &quot; &amp;  in_StrSheetName &amp; &quot;) Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrWhiteSpace(in_StrWorkbookFileName) = True]" DisplayName="If in_StrWorkbookFileName Is Null Or WhiteSpace" sap:VirtualizedContainerService.HintSize="539,51" sap2010:WorkflowViewState.IdRef="If_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Incoming Argument in_StrWorkbookFileName Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Incoming Argument in_StrWorkbookFileName (Ref: &quot; &amp; in_StrWorkbookFileName &amp; &quot;) Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrWhiteSpace(in_StrWorkbookFilePath) = True]" DisplayName="If in_StrWorkbookFilePath Is Null Or WhiteSpace" sap:VirtualizedContainerService.HintSize="539,51" sap2010:WorkflowViewState.IdRef="If_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;Incoming Argument in_sStrWorkbookFilePath  Is Not Initialised Or Not Populated&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Incoming Argument in_StrWorkbookFilePath (Ref: &quot; &amp; in_StrWorkbookFilePath  &amp; &quot;) Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <ui:PathExists DisplayName="Path Exists (in_StrWorkbookFilePath, in_StrWorkbookFileName)" Exists="[boolPreConditionMet]" sap:VirtualizedContainerService.HintSize="539,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(in_StrWorkbookFilePath, in_StrWorkbookFileName)]" PathType="File" />
+        <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="539,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[Path.Combine(in_StrWorkbookFilePath, in_StrWorkbookFileName).ToString]" />
+        <If Condition="[boolPreConditionMet = False]" DisplayName="If Pre Condition is False" sap:VirtualizedContainerService.HintSize="539,239" sap2010:WorkflowViewState.IdRef="If_4">
+          <If.Then>
+            <Throw DisplayName="Throw PreCondition EXC" Exception="[new Exception(&quot;Pre-Condition Failed, Provided Workbook Does Not Exist At The Given Path&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Pre-Condition Successful, Provided Workbook Exists At The Given Path&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="561,194" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <bew:RenameSheet ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Rename Work Sheet" FilePath="[Path.Combine(in_StrWorkbookFilePath, in_StrWorkbookFileName).ToString]" sap:VirtualizedContainerService.HintSize="425,70" sap2010:WorkflowViewState.IdRef="RenameSheet_3" NewSheetName="[in_StrNewSheet]" SheetName="[in_StrSheetName]" />
+      </Sequence>
+      <Sequence DisplayName="Post Condition" sap:VirtualizedContainerService.HintSize="561,198" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Post Condition doesnt aply to this component" />
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
