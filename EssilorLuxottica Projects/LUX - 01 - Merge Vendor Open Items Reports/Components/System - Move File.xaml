@@ -1,0 +1,308 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="System___Move_File"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrMoveFromFolderName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrMoveFromFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrMoveToFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrMoveToFolderName" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>System___Get_Files_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="System - Move File" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="System - Move File" Name="strComponentName" />
+    </Sequence.Variables>
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_1" Text="Move file from one location to another&#xA;&#xA;Pre-Conditions: File From path exists&#xA;&#xA;Post-Conditions: File to path exists&#xA;&#xA;Arguments: in_____StrMoveFromFolderName, in_____StrMoveFromFileName, in_____StrMoveToFileName, in_____StrMoveToFolderName" />
+    <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting Sequence &quot; +strComponentName]" />
+    <Sequence DisplayName="Check Arguments In" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dtVariableChecker" />
+      </Sequence.Variables>
+      <If Condition="[String.IsNullOrWhiteSpace(in_StrMoveFromFolderName)]" DisplayName="If incoming string is Null Or WhiteSpace" sap2010:WorkflowViewState.IdRef="If_6">
+        <If.Then>
+          <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;The incoming argument in_StrMoveFromFolderName is Null or not populated.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_6" />
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Incoming arguments in_StrMoveFromFolderName is not Null and are populated.&quot;]" />
+        </If.Else>
+      </If>
+      <If Condition="[String.IsNullOrWhiteSpace(in_StrMoveFromFileName)]" DisplayName="If incoming string is Null Or WhiteSpace" sap2010:WorkflowViewState.IdRef="If_7">
+        <If.Then>
+          <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;The incoming argument in_StrMoveFromFileName is Null or not populated.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_7" />
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Incoming arguments in_StrMoveFromFileName is not Null and are populated.&quot;]" />
+        </If.Else>
+      </If>
+      <If Condition="[String.IsNullOrWhiteSpace(in_StrMoveToFileName)]" DisplayName="If incoming string is Null Or WhiteSpace" sap2010:WorkflowViewState.IdRef="If_8">
+        <If.Then>
+          <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;The incoming argument in_StrMoveToFileName is Null or not populated.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_8" />
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Incoming arguments in_StrMoveToFileName is not Null and are populated.&quot;]" />
+        </If.Else>
+      </If>
+      <If Condition="[String.IsNullOrWhiteSpace(in_StrMoveToFolderName)]" DisplayName="If incoming string is Null Or WhiteSpace" sap2010:WorkflowViewState.IdRef="If_9">
+        <If.Then>
+          <Throw DisplayName="Throw AE " Exception="[New Exception(&quot;The incoming argument in_StrMoveToFolderName is Null or not populated.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_9" />
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[&quot;Incoming arguments in_StrMoveToFolderName is not Null and are populated.&quot;]" />
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Pre-Condition" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="boolFromFileExists" />
+      </Sequence.Variables>
+      <ui:PathExists DisplayName="From-Folder Path exists" Exists="[boolFromFileExists]" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[path.Combine(in_StrMoveFromFolderName, in_StrMoveFromFileName)]" PathType="File" />
+      <If Condition="[boolFromFileExists = false]" DisplayName="If From-Folder path does not exist" sap2010:WorkflowViewState.IdRef="If_4">
+        <If.Then>
+          <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;The file &quot;+ path.Combine(in_StrMoveFromFolderName, in_StrMoveFromFileName).ToString + &quot; does not exist&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_4" />
+        </If.Then>
+        <If.Else>
+          <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;File To Move Found: &quot; + path.Combine(in_StrMoveFromFolderName, in_StrMoveFromFileName).ToString]" />
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Perform Sequence Actions" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="arrFiles" />
+        <Variable x:TypeArguments="x:Boolean" Name="boolToFileExists" />
+      </Sequence.Variables>
+      <ui:PathExists DisplayName="Check To-Folder Path exists" Exists="[boolToFileExists]" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[in_StrMoveToFolderName]" PathType="File" />
+      <If Condition="[boolToFileExists = False]" DisplayName="If To-Folder Does Not Exist" sap2010:WorkflowViewState.IdRef="If_11">
+        <If.Then>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create To-Folder" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_StrMoveToFolderName]" />
+        </If.Then>
+      </If>
+      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[path.Combine(in_StrMoveToFolderName, in_StrMoveToFileName)]" DisplayName="Move file" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[path.Combine(in_StrMoveFromFolderName, in_StrMoveFromFileName)]" />
+    </Sequence>
+    <Sequence DisplayName="Post-Condition" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="boolFileToExists" />
+      </Sequence.Variables>
+      <ui:PathExists DisplayName="Path exists" Exists="[boolFileToExists]" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[path.Combine(in_StrMoveToFolderName, in_StrMoveToFileName)]" PathType="File" />
+      <If Condition="[boolFileToExists = false]" DisplayName="If path does not exist" sap2010:WorkflowViewState.IdRef="If_10">
+        <If.Then>
+          <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;The file &quot;+ path.Combine(in_StrMoveToFolderName, in_StrMoveToFileName).ToString + &quot; does not exist&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_10" />
+        </If.Then>
+      </If>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log message" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Ending Sequence &quot; +strComponentName]" />
+    <sads:DebugSymbol.Symbol>d4cBXFxhd3NkZXZmaWxlc2hhcmUudXMuZXNzaWxvci5wdnRcZXNzaWxvci11cy1kZXYtcnBhXERldmVsb3BtZW50XFRheFxUWCAtIDEgLSBTYWxlcyBUYXggRmlsaW5nXENvbXBvbmVudHNcU3lzdGVtXFN5c3RlbSAtIE1vdmUgRmlsZS54YW1sPU0DoAEOAgEBTzRPSAIBAlEFUc0CAgFLUgVSqQECAUhTBXcQAgEreAWFARACAR+GAQWSARACARCTAQWdARACAQaeAQWeAacBAgEDUnJSpgECAUlXB14MAgFBXwdmDAIBOmcHbgwCATNvB3YMAgEsfAd84wECASd9B4QBDAIBIIsBB4sBvQECARqMAQeQAQwCARSRAQeRAZoCAgERlwEHlwHRAQIBDJgBB5wBDAIBB54Bcp4BpAECAQRXFVdMAgFCWQtZyAECAUZcC1zWAQIBRF8VX0oCATthC2HGAQIBP2QLZNQBAgE9ZxVnSAIBNGkLacQBAgE4bAts0wECATZvFW9KAgEtcQtxxgECATF0C3TVAQIBL3xDfFkCASl8jgF80AECASh9FX0zAgEhfwt/7wECASWCAQuCAesBAgEjiwFHiwFbAgEdiwGQAYsBqgECARuMARWMATECARWOAQuOAa8BAgEXkQE7kQF5AgETkQHVAZEBlwICARKXATeXAUsCAQ6XAYABlwG+AQIBDZgBFZgBMQIBCJoBC5oB7AECAQpZNFmbAQIBR1x5XNMBAgFFYTRhmQECAUBkeWTRAQIBPmk0aZcBAgE5bHps0AECATdxNHGZAQIBMnR6dNIBAgEwfzN/wgECASaCAXqCAegBAgEkjgGSAY4BrAECARiaATOaAb4BAgEL</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Comment_1" sap:VirtualizedContainerService.HintSize="561,228" />
+      <sap2010:ViewStateData Id="LogMessage_8" sap:VirtualizedContainerService.HintSize="561,91">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="LogMessage_6" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_6" sap:VirtualizedContainerService.HintSize="539,239">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_7" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="LogMessage_9" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_7" sap:VirtualizedContainerService.HintSize="539,239">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_8" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="LogMessage_10" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_8" sap:VirtualizedContainerService.HintSize="539,239">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_9" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="LogMessage_11" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_9" sap:VirtualizedContainerService.HintSize="539,239">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="561,1200">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PathExists_1" sap:VirtualizedContainerService.HintSize="539,89">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_4" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="LogMessage_12" sap:VirtualizedContainerService.HintSize="314,91" />
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="539,239">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="561,492">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PathExists_3" sap:VirtualizedContainerService.HintSize="464,89">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CreateDirectory_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="464,208" />
+      <sap2010:ViewStateData Id="MoveFile_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="561,523">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="PathExists_2" sap:VirtualizedContainerService.HintSize="464,89">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Throw_10" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_10" sap:VirtualizedContainerService.HintSize="464,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="561,461">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogMessage_7" sap:VirtualizedContainerService.HintSize="486,91">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="583,3450">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="System___Get_Files_1" sap:VirtualizedContainerService.HintSize="623,3530" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

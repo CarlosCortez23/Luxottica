@@ -1,0 +1,216 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_IntDefaultTimeoutL="10000" this:Main.in_StrEmailBody="testing this" this:Main.in_StrSubjectLine="test subject" this:Main.in_StrToEmailAddress="william.arn@symphonyhq.com" this:Main.in_StrFromEmailAddress="william.arn@essilorusa.com" this:Main.in_IntPort="465" this:Main.in_StrServer="smtp.gmail.com" this:Main.in_StrFromEmailPassword="shhskfhlfhlaldod" this:Main.in_StrCCEmailAddress="william.arn@essilorusa.com" this:Main.in_IenAttachmentsFullPaths="[{}]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_IntDefaultDelay" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutM" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutL" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_StrEmailBody" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrSubjectLine" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrToEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrFromEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_IntPort" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_StrServer" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrFromEmailPassword" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCCEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_IenAttachmentsFullPaths" Type="InArgument(scg:IEnumerable(x:String))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>759,4036</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Terminal</x:String>
+      <x:String>UiPath.Terminal.Service</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.Terminal</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="719,3916" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="SMTP - Send Email" Name="strComponentName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="697,399" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  Sends an email of the given body with the given subject to the desired email address, also attaches all files from the list of given filepaths.&#xA;&#xA;Pre condition: Inputs are valid&#xA;&#xA;Post condition: Email is sent&#xA;&#xA;Arguments: in_________StrEmailBody, in_________StrSubjectLine, in_________StrToEmailAddress, in_________StrFromEmailAddress, in_________IntPort, in_________StrServer, in_________StrFromEmailPassword, in_________StrCCEmailAddress, in_________IenAttachmentsFullPaths&#xD;&#xA;&#xD;&#xA;Dev Notes: Set up in_________IenAttachmentsFullPaths using this format {&quot;C:\fullpath1.xlsx&quot;,&quot;D:\fullpath2.txt&quot;}&#xA;" />
+    <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="697,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
+    <Sequence DisplayName="SMTP - Send Email" sap:VirtualizedContainerService.HintSize="697,3091" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="675,2595" sap2010:WorkflowViewState.IdRef="Sequence_19">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[String.IsNullOrEmpty(in_StrEmailBody)]" DisplayName="If in_StrEmailBody is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_12">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrEmailBody Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_16" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Trace" Message="[&quot;Input Argument  in_StrEmailBody Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrSubjectLine)]" DisplayName="If in_StrSubjectLine is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_13">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrSubjectLine Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_17" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Input Argument  in_StrSubjectLine Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrToEmailAddress)]" DisplayName="If in_StrToEmailAddress is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_14">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrToEmailAddress Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_18" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[&quot;Input Argument  in_StrToEmailAddress Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrFromEmailAddress)]" DisplayName="If in_StrFromEmailAddress is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_15">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrFromEmailAddress Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_19" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Trace" Message="[&quot;Input Argument  in_StrFromEmailAddress Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_IntPort.ToString)]" DisplayName="if in_IntPort is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_16">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_IntPort Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_20" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Trace" Message="[&quot;Input Argument  in_IntPort Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrServer)]" DisplayName="if in_StrServer is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_17">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrServer Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_21" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Trace" Message="[&quot;Input Argument  in_StrServer Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrFromEmailPassword)]" DisplayName="if in_StrFromEmailPassword is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_19">
+          <If.Then>
+            <Throw DisplayName="Throw AE" Exception="[New Exception(&quot;Input Argument in_StrFromEmailPassword Is Null Or Not Populated.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_23" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Trace" Message="[&quot;Input Argument  in_StrFromEmailPassword Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[String.IsNullOrEmpty(in_StrCCEmailAddress)]" DisplayName="if in_StrCCEmailAddress is null or empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_20">
+          <If.Then>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Trace" Message="[&quot;No CC Email address - Input Argument  in_StrCCEmailAddress Is Null or Not Populated&quot;]" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Trace" Message="[&quot;Input Argument  in_StrCCEmailAddress Is Not Null And Is Populated&quot;]" />
+          </If.Else>
+        </If>
+        <If Condition="[in_IenAttachmentsFullPaths.Count &gt; 0]" DisplayName="if in_ienAttachmentsFullPaths is not empty" sap:VirtualizedContainerService.HintSize="653,239" sap2010:WorkflowViewState.IdRef="If_8">
+          <If.Then>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Input Argument  in_IenAttachmentsFullPaths Is Not Null And Is Populated&quot;]" />
+          </If.Then>
+          <If.Else>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;No attachments - Input Argument  in_IenAttachmentsFullPaths Is Null or not Populated&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="675,332" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[in_IenAttachmentsFullPaths.Count &gt; 0]" DisplayName="If you have attachments" sap:VirtualizedContainerService.HintSize="464,208" sap2010:WorkflowViewState.IdRef="If_11">
+          <If.Then>
+            <ui:SendMail Bcc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" AttachmentsCollection="[in_IenAttachmentsFullPaths]" Body="[in_StrEmailBody]" Cc="[in_StrCCEmailAddress]" DisplayName="Send SMTP - With attachment" Email="[in_StrFromEmailAddress]" EnableSSL="True" From="[in_StrFromEmailAddress]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="[in_StrFromEmailPassword]" Port="[in_IntPort]" SecureConnection="Auto" Server="[in_StrServer]" Subject="[in_StrSubjectLine]" TimeoutMS="[in_IntDefaultTimeoutL]" To="[in_StrToEmailAddress]">
+              <ui:SendMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+              </ui:SendMail.Files>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SendMail>
+          </If.Then>
+          <If.Else>
+            <ui:SendMail Bcc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Body="[in_StrEmailBody]" Cc="[in_StrCCEmailAddress]" DisplayName="Send SMTP - No attachment" Email="[in_StrFromEmailAddress]" EnableSSL="True" From="[in_StrFromEmailAddress]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="[in_StrFromEmailPassword]" Port="[in_IntPort]" SecureConnection="Auto" Server="[in_StrServer]" Subject="[in_StrSubjectLine]" TimeoutMS="[in_IntDefaultTimeoutL]" To="[in_StrToEmailAddress]">
+              <ui:SendMail.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+              </ui:SendMail.Files>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SendMail>
+          </If.Else>
+        </If>
+      </Sequence>
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="697,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
+  </Sequence>
+</Activity>
