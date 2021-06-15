@@ -72,15 +72,14 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="636,1255" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="DtMasterDataTable" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Payment Methods" Name="MasterDTColumn7" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Vendor_Code" Name="MasterDTColumn8" />
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry_Key_Name" Name="MasterDTColumn9" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtMasterDataTable" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Payment Methods" Name="strMasterDTColumn7" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Vendor_Code" Name="strMasterDTColumn8" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry_Key_Name" Name="strMasterDTColumn9" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -89,15 +88,15 @@
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="614,1131" sap2010:WorkflowViewState.IdRef="Flowchart_2">
       <Flowchart.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="DtSummary" />
-        <Variable x:TypeArguments="sd:DataTable" Name="DtVlookups" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Company Code" Name="MasterDTColumn1" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Vendor Name" Name="MasterDTColumn2" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Name" Name="MasterDTColumn3" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry key" Name="MasterDTColumn4" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry Name" Name="MasterDTColumn5" />
-        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Payment Terms" Name="MasterDTColumn6" />
-        <Variable x:TypeArguments="x:Int32" Default="0" Name="counter" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtSummary" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtVlookups" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Company Code" Name="strMasterDTColumn1" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Vendor Name" Name="strMasterDTColumn2" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Name" Name="strMasterDTColumn3" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry key" Name="strMasterDTColumn4" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Industry Name" Name="strMasterDTColumn5" />
+        <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Payment Terms" Name="strMasterDTColumn6" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="intCounter" />
       </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -120,7 +119,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,445.5 300,464.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Vlookups Table" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Vlookups Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorLookupsFileSheetName]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorLookupsFileName]</InArgument>
@@ -129,7 +128,7 @@
             <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">
               <Literal x:TypeArguments="x:String" Value="" />
             </InArgument>
-            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[DtVlookups]</OutArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtVlookups]</OutArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
           </ui:InvokeWorkflowFile.Arguments>
           <sap:WorkflowViewStateService.ViewState>
@@ -154,7 +153,7 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorMasterFilePath]</InArgument>
                 <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">True</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[Nothing]</InArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[DtMasterDataTable]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtMasterDataTable]</OutArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
@@ -179,7 +178,7 @@
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">True</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[Nothing]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[DtSummary]</OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtSummary]</OutArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
@@ -197,7 +196,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,675.5 300,714.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
@@ -214,10 +213,10 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <Assign sap:VirtualizedContainerService.HintSize="418,60" sap2010:WorkflowViewState.IdRef="Assign_47">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
+                                <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
                               </Assign.Value>
                             </Assign>
                             <TryCatch DisplayName="Try Catch Lookup BU" sap:VirtualizedContainerService.HintSize="418,538" sap2010:WorkflowViewState.IdRef="TryCatch_3">
@@ -236,7 +235,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup BU" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">CoCd</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">BU</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -298,9 +297,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup vendor name" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtMasterDataTable]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[MasterDTColumn8]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[MasterDTColumn3]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtMasterDataTable]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[strMasterDTColumn8]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[strMasterDTColumn3]</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrLookupValue">[row("Acct + CoCd").ToString]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
@@ -360,9 +359,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup Microcategory" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtMasterDataTable]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[MasterDTColumn8]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[MasterDTColumn9]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtMasterDataTable]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[strMasterDTColumn8]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[strMasterDTColumn9]</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrLookupValue">[row("Acct + CoCd").ToString]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
@@ -422,7 +421,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup Macrocategory" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">CODE</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">Macro Category</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -484,7 +483,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup  Procurement Area" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">CODE</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">Procurement Area</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -546,7 +545,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="3rd party" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">Vendor (Invoicing)</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">Essilor/3P</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -608,9 +607,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup  Vendor PM" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtMasterDataTable]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[MasterDTColumn8]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[MasterDTColumn7]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtMasterDataTable]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[strMasterDTColumn8]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[strMasterDTColumn7]</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrLookupValue">[row("Acct + CoCd").ToString]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
@@ -670,7 +669,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup Pay Method" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">PM Code</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">Pay Method</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -733,9 +732,9 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup PayT" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtMasterDataTable]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[MasterDTColumn8]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[MasterDTColumn6]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtMasterDataTable]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">[strMasterDTColumn8]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">[strMasterDTColumn6]</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrLookupValue">[row("Acct + CoCd").ToString]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
@@ -795,7 +794,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Lookup Payment Terms" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Generic\Generic - Vlookup.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[DtVlookups]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTableToLook">[dtVlookups]</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrColumnToLook">Pay Terms</InArgument>
                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrTargetColumn">Pay Terms Text</InArgument>
                                       <OutArgument x:TypeArguments="ui:GenericValue" x:Key="out_GvResultValue">[GvVlookupResult]</OutArgument>
@@ -873,7 +872,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Summary Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Write Range (Excel Scope).xaml&quot;]">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">[DtSummary]</InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">[dtSummary]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorSummaryFileSheetName]</InArgument>
@@ -924,7 +923,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <Assign DisplayName="Company Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn1]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn1]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">C.Code</InArgument>
@@ -932,7 +931,7 @@
               </Assign>
               <Assign DisplayName="Vendor " sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn2]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn2]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Vendor</InArgument>
@@ -940,7 +939,7 @@
               </Assign>
               <Assign DisplayName="Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_34">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn3]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn3]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Name</InArgument>
@@ -948,7 +947,7 @@
               </Assign>
               <Assign DisplayName="Industry key" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_35">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn4]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn4]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Industry key</InArgument>
@@ -956,7 +955,7 @@
               </Assign>
               <Assign DisplayName="Industry Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_36">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn5]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn5]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Industry Name</InArgument>
@@ -964,7 +963,7 @@
               </Assign>
               <Assign DisplayName="Payment Terms" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_37">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn6]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn6]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Payment Terms</InArgument>
@@ -972,7 +971,7 @@
               </Assign>
               <Assign DisplayName="Payment Methods" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn7]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn7]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Payment Methods</InArgument>
@@ -980,7 +979,7 @@
               </Assign>
               <Assign DisplayName="Vendor_Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_39">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn8]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn8]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Vendor_Code</InArgument>
@@ -988,7 +987,7 @@
               </Assign>
               <Assign DisplayName="Industry_Key_Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_40">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn9]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn9]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Industry_Key_Name</InArgument>
@@ -1017,7 +1016,7 @@
               </sap:WorkflowViewStateService.ViewState>
               <Assign DisplayName="Company Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn1]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn1]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Company Code</InArgument>
@@ -1025,7 +1024,7 @@
               </Assign>
               <Assign DisplayName="Vendor " sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn2]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn2]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Vendor</InArgument>
@@ -1033,7 +1032,7 @@
               </Assign>
               <Assign DisplayName="Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn3]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn3]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Name 1</InArgument>
@@ -1041,7 +1040,7 @@
               </Assign>
               <Assign DisplayName="Industry key" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn4]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn4]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Indus.</InArgument>
@@ -1049,7 +1048,7 @@
               </Assign>
               <Assign DisplayName="Industry Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn5]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn5]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Industry Name</InArgument>
@@ -1057,7 +1056,7 @@
               </Assign>
               <Assign DisplayName="Payment Terms" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn6]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn6]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">PayT Accounting</InArgument>
@@ -1065,7 +1064,7 @@
               </Assign>
               <Assign DisplayName="Payment Methods" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn7]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn7]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Pmt. Method</InArgument>
@@ -1073,7 +1072,7 @@
               </Assign>
               <Assign DisplayName="Vendor_Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn8]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn8]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Vendor_Code</InArgument>
@@ -1081,7 +1080,7 @@
               </Assign>
               <Assign DisplayName="Industry_Key_Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[MasterDTColumn9]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strMasterDTColumn9]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">Industry_Key_Name</InArgument>

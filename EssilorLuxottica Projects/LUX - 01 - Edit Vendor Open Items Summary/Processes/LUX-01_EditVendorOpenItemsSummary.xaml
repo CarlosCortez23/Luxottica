@@ -241,7 +241,7 @@
               <av:PointCollection x:Key="ConnectorLocation">220,599 220,629 269.5,629 269.5,670</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Add VlookUp" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="414,340" sap2010:WorkflowViewState.IdRef="TryCatch_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,13 +249,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Invoke Sub-Process #2" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Invoke Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #2" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Add Vlookups To Vendor Summary File.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Add Vlookups To Vendor Summary File.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterFilePath">[in_TransactionItem.SpecificContent("VendorMasterDataFilePath").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterFileName">[in_TransactionItem.SpecificContent("VendorMasterDataFileName").ToString]</InArgument>
@@ -273,7 +273,7 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -289,15 +289,15 @@
                       <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                      <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Add Vlookups To Vendor Summary File] - {1}.", exception.Message, exception.Source))]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </ActivityAction>
               </Catch>
-              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -310,7 +310,7 @@
                       <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                      <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Add Vlookups To Vendor Summary File] - {1}.", exception.Message, exception.Source))]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </ActivityAction>
@@ -495,7 +495,7 @@
           <av:PointCollection x:Key="ConnectorLocation">311.5,211.04 311.5,285.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Format summary file" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -503,15 +503,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Invoke Sub-Process #1 And Set Progress" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Change Formula to Values.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Change Formula to Values.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("LUX-01_ReportsSheetToMerge").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_TransactionItem.SpecificContent("VendorReportFilePath").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
@@ -541,7 +541,7 @@
                   <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                  <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
                 </Assign.Value>
               </Assign>
             </ActivityAction>
@@ -562,7 +562,7 @@
                   <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                  <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
                 </Assign.Value>
               </Assign>
             </ActivityAction>

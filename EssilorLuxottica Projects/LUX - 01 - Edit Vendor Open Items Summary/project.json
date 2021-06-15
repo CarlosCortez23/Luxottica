@@ -1,6 +1,6 @@
 {
-  "name": "UiPath_REFrameWork",
-  "description": "UiPath_REFrameWork Template",
+  "name": "LUX - 01 - Edit Vendor Open Items Summary",
+  "description": "LUX - 01 - Edit Vendor Open Items Summary",
   "main": "Main.xaml",
   "dependencies": {
     "BalaReva.Excel.Activities": "2020.3.3",

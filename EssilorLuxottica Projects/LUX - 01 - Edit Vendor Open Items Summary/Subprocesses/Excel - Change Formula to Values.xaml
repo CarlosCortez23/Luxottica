@@ -65,16 +65,15 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Cryptography</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Subprocess" sap:VirtualizedContainerService.HintSize="636,760" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="636,760" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -95,7 +94,7 @@
             <av:PointCollection x:Key="ConnectorLocation">310,225 310,249</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - Add Sheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Add Sheet.xaml&quot;]">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Add Sheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Add Sheet.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrWorkbookFilePath]</InArgument>
@@ -121,14 +120,14 @@
                     <av:PointCollection x:Key="ConnectorLocation">310,345.02 310,374</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - Copy from x to y Sheet workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Copy from x to y Sheet.xaml&quot;]">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Copy from x to y Sheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Copy from x to y Sheet.xaml&quot;]">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrWorkbookFilePath]</InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
                     <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS" />
+                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrFromSheetName">[in_StrSheetName]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrToSheetName">Sheet1</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
@@ -142,7 +141,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">310,425 310,444</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - DeleteSheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - DeleteSheet.xaml&quot;]">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - DeleteSheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - DeleteSheet.xaml&quot;]">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
@@ -157,7 +156,7 @@
                             <av:Size x:Key="ShapeSize">200,51</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - RenameWorkSheet workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - RenameWorkSheet.xaml&quot;]">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - RenameWorkSheet workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - RenameWorkSheet.xaml&quot;]">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">Sheet1</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
