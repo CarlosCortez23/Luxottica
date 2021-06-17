@@ -1,6 +1,6 @@
 {
-  "name": "UiPath_REFrameWork",
-  "description": "UiPath_REFrameWork Template",
+  "name": "LUX - 01 - Merge Vendor Open Items Reports",
+  "description": "LUX - 01 - Merge Vendor Open Items Reports",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.5.4]",

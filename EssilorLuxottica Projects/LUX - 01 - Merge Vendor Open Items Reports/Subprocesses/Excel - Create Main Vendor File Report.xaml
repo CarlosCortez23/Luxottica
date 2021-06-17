@@ -94,7 +94,7 @@
           <av:PointCollection x:Key="ConnectorLocation">210,685.5 210,729</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read  Excel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel - Read Range.xaml&quot;]">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read  Excel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[LstFilesToMerge( intCounter-1).ToString]</InArgument>
@@ -137,7 +137,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">210,845.5 210,880</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Move Excel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System - Move File.xaml&quot;]">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Move Excel File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Move File.xaml&quot;]">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrReportsOriginalFolder]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[LstFilesToMerge( intCounter-1).ToString]</InArgument>
@@ -191,13 +191,15 @@
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Master Table  to Excel" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel - Write Range.xaml&quot;]">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Master Table  to Excel" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\Excel\Excel - Write Specific Range.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">[DtMasterReport]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrMasterReportFolder]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrMasterReportName.Replace("mmddyy",now.Date.ToString("MMddyy"))]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrMRSheetName]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">A1</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">True</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -224,7 +226,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,174.5 300,204.5 299.895,204.5 299.895,210</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Files in the folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System - Get List of Files.xaml&quot;]">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Files in the folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Get List of Files.xaml&quot;]">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrFolderPath">[in_StrReportsOriginalFolder]</InArgument>
           <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_LstFileList">[LstFilesToMerge]</OutArgument>
@@ -266,17 +268,17 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,345.5 300,384.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read  Template" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel - Read Range.xaml&quot;]">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read  Template" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrTemplateFile]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrTemplatePath]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[DtMasterReport]</OutArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">True</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">
                     <Literal x:TypeArguments="x:String" Value="" />
                   </InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[DtMasterReport]</OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -293,7 +295,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,435.5 300,465.5 294.5,465.5 294.5,506.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy Template" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System - Copy File.xaml&quot;]">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy Template" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Copy File.xaml&quot;]">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromPath">[in_StrTemplatePath]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromName">[in_StrTemplateFile]</InArgument>

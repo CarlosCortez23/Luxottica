@@ -55,18 +55,18 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="Import files into Vertex" sap:VirtualizedContainerService.HintSize="1506,2383" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="LUX - 01 - Merge Vendor Open Items Reports" sap:VirtualizedContainerService.HintSize="1506,2383" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart DisplayName="Process-Layer" sap:VirtualizedContainerService.HintSize="1484,2232" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart DisplayName="LUX - 01 - Merge Vendor Open Items Reports" sap:VirtualizedContainerService.HintSize="1484,2232" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="s:Exception" Name="ProcessApplicationException" />
         <Variable x:TypeArguments="ui:BusinessRuleException" Name="ProcessBusinessException" />
@@ -93,7 +93,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,292.5 300,336.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Create Master File" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Create Main Vendor File Report" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -101,24 +101,24 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Invoke Sub-Process #1 And Set Progress" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Excel - Create Main Vendor File Report" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;\Excel - Create Main Vendor File Report.xaml&quot;]">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - Create Main Vendor File Report" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;\Excel - Create Main Vendor File Report.xaml&quot;]">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">True</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsOriginalFolder">[in_Config("LUX-01_ReportsToMergeOriginalFolder").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsNewFolder">[in_Config("LUX-01_MergedReportsNewFolder").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMasterReportFolder">[in_Config("LUX-01_MasterReportFolder").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("LUX-01_ReportsSheetToMerge").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMasterReportName">[in_Config("LUX-01_MasterReportNameFormat").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMRSheetName">[in_Config("LUX-01_ReportsSheetToMerge").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplatePath">[in_Config("LUX-01_MasterReportTemplateFolder").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateFile">[in_Config("LUX-01_MasterReportTemplateName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsOriginalFolder">[in_Config("strReportsToMergeOriginalFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsNewFolder">[in_Config("strMergedReportsNewFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMasterReportFolder">[in_Config("strFinalReportFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMasterReportName">[in_Config("strFinalReportNameFormat").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrMRSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplatePath">[in_Config("strFinalReportTemplateFolder").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateFile">[in_Config("strFinalReportTemplateName").ToString]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -140,7 +140,7 @@
                     <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                    <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Create Main Vendor File Report] - {1}.", exception.Message, exception.Source))]</InArgument>
                   </Assign.Value>
                 </Assign>
               </ActivityAction>
@@ -161,7 +161,7 @@
                     <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                    <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatchExcel - Create Main Vendor File Report] - {1}.", exception.Message, exception.Source))]</InArgument>
                   </Assign.Value>
                 </Assign>
               </ActivityAction>
@@ -188,7 +188,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">310,302.5 310,346.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Send SuccessMail" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Open Items - Send Email" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,28 +196,27 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Invoke Sub-Process #1 And Set Progress" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Open Items - Send Email" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Open Items - Send Email" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("strToEmailAddress").ToString]</InArgument>
                           <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("strEmailPort").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("strEmailServer").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("strCCEmailAdress").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("strFromEmailCredentials").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">True</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
@@ -240,7 +239,7 @@
                             <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                            <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch Open Items - Send Email] - {1}.", exception.Message, exception.Source))]</InArgument>
                           </Assign.Value>
                         </Assign>
                       </ActivityAction>
@@ -261,7 +260,7 @@
                             <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch SubProcess #1] - {1}.", exception.Message, exception.Source))]</InArgument>
+                            <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Open Items - Send Email] - {1}.", exception.Message, exception.Source))]</InArgument>
                           </Assign.Value>
                         </Assign>
                       </ActivityAction>
@@ -319,33 +318,50 @@
                         </Catch>
                       </TryCatch.Catches>
                       <TryCatch.Finally>
-                        <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="358,397" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("strToEmailAddress").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("strEmailPort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("strEmailServer").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("strCCEmailAdress").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">[in_Config("strReportsToMergeOriginalFolder").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("strFromEmailCredentials").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <Throw DisplayName="Throw AE" Exception="[ProcessApplicationException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              </Sequence>
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
-                          <Throw DisplayName="Throw AE" Exception="[ProcessApplicationException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                        </Sequence>
+                        </ui:CommentOut>
                       </TryCatch.Finally>
                     </TryCatch>
                   </FlowStep>
@@ -388,33 +404,50 @@
                         </Catch>
                       </TryCatch.Catches>
                       <TryCatch.Finally>
-                        <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="358,397" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                                <Throw DisplayName="Throw AE" Exception="[ProcessBusinessException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                              </Sequence>
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
-                          <Throw DisplayName="Throw AE" Exception="[ProcessBusinessException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                        </Sequence>
+                        </ui:CommentOut>
                       </TryCatch.Finally>
                     </TryCatch>
                   </FlowStep>
