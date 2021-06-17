@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>376,995</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>531,1138</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,7 +70,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="336,915" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="491,1058" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Excel - Copy To Clipboard" Name="strComponentName" />
     </Sequence.Variables>
@@ -79,16 +79,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="314,132" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component copy to the clipboard a specific range from Excel file&#xA;&#xA;Arguments: in_StrFilePath, in_StrFileName, in_StrSheetName,&#xD;&#xA;in_StrEndRange" />
-    <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="Excel - Copy To Clipboard" sap:VirtualizedContainerService.HintSize="314,357" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="469,132" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component copy to the clipboard a specific range from Excel file&#xA;&#xA;Arguments: in_StrFilePath, in_StrFileName, in_StrSheetName,&#xA;in_StrEndRange" />
+    <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="469,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
+    <Sequence DisplayName="Excel - Copy To Clipboard" sap:VirtualizedContainerService.HintSize="469,500" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="447,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -152,16 +152,16 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence DisplayName="Perform Sequence Actions" sap:VirtualizedContainerService.HintSize="447,194" sap2010:WorkflowViewState.IdRef="Sequence_13">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <bee:CopyData ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" ContinueOnError="False" CopyRange="[&quot;K2:K&quot;+in_StrEndRange]" Delay="3" DisplayName="Copy Data to Clipboard" FilePath="[in_StrFilePath+ in_StrFileName]" sap:VirtualizedContainerService.HintSize="425,70" sap2010:WorkflowViewState.IdRef="CopyData_1" SheetName="[in_StrSheetName]" />
+        <bee:CopyData ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" ContinueOnError="False" CopyRange="[&quot;A1:A&quot;+in_StrEndRange]" Delay="3" DisplayName="Copy Data to Clipboard" FilePath="[in_StrFilePath+ in_StrFileName]" sap:VirtualizedContainerService.HintSize="425,70" sap2010:WorkflowViewState.IdRef="CopyData_1" SheetName="[in_StrSheetName]" />
       </Sequence>
-      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence DisplayName="Check Arguments Out" sap:VirtualizedContainerService.HintSize="447,51" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -171,6 +171,6 @@
         <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Argument Out is not applicable to this component" />
       </Sequence>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
+    <ui:LogMessage DisplayName="Log Message - End Log" sap:VirtualizedContainerService.HintSize="469,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Ending sequence &quot; + strComponentName]" />
   </Sequence>
 </Activity>
