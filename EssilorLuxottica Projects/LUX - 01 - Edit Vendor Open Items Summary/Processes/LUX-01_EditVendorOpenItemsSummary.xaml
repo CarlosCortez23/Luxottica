@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>886,1065</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>968,1680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,28 +59,29 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="LUX-01_EditVendorOpenItemsSummary" sap:VirtualizedContainerService.HintSize="846,985" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="LUX-01_EditVendorOpenItemsSummary" sap:VirtualizedContainerService.HintSize="928,1600" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="s:Exception" Name="ProcessApplicationException" />
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="ProcessBusinessException" />
+      <Variable x:TypeArguments="x:Int32" Name="IntSummaryRows" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
         <av:Point x:Key="ShapeLocation">290,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <x:Double x:Key="Width">831.5</x:Double>
-        <x:Double x:Key="Height">949</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">320,77.5 320,107.5 311.5,107.5 311.5,133.04</av:PointCollection>
+        <x:Double x:Key="Width">914</x:Double>
+        <x:Double x:Key="Height">1564.04</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">320,77.5 320,131</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID19</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">351.5,453.04</av:Point>
+          <av:Point x:Key="ShapeLocation">391.5,493.04</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -91,10 +92,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -113,41 +114,12 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
-        <TryCatch.Finally>
-          <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <Throw DisplayName="Throw AE" Exception="[ProcessApplicationException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-          </Sequence>
-        </TryCatch.Finally>
       </TryCatch>
     </FlowStep>
     <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">631.5,453.04</av:Point>
+          <av:Point x:Key="ShapeLocation">681.5,493.04</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -180,68 +152,39 @@
             </ActivityAction>
           </Catch>
         </TryCatch.Catches>
-        <TryCatch.Finally>
-          <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <Throw DisplayName="Throw AE" Exception="[ProcessBusinessException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
-          </Sequence>
-        </TryCatch.Finally>
       </TryCatch>
     </FlowStep>
     <FlowDecision x:Name="__ReferenceID2" Condition="[IsNothing(ProcessBusinessException)]" DisplayName="AE?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">546.5,345.04</av:Point>
+          <av:Point x:Key="ShapeLocation">596.5,385.04</av:Point>
           <av:Size x:Key="ShapeSize">70,87</av:Size>
-          <av:PointCollection x:Key="TrueConnector">546.5,388.54 451.5,388.54 451.5,453.04</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">616.5,388.54 731.5,388.54 731.5,453.04</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">596.5,428.54 491.5,428.54 491.5,493.04</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">666.5,428.54 781.5,428.54 781.5,493.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </FlowDecision>
-    <FlowDecision x:Name="__ReferenceID3" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+    <FlowDecision x:Name="__ReferenceID18" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">268,285.04</av:Point>
+          <av:Point x:Key="ShapeLocation">278,285.04</av:Point>
           <av:Size x:Key="ShapeSize">87,87</av:Size>
-          <av:PointCollection x:Key="FalseConnector">355,328.54 581.5,328.54 581.5,345.04</av:PointCollection>
-          <av:PointCollection x:Key="TrueConnector">268,328.54 220,328.54 220,521</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">365,328.54 631.5,328.54 631.5,385.04</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">278,328.54 210,328.54 210,511</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowStep x:Name="__ReferenceID8">
+        <FlowStep x:Name="__ReferenceID7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">120,521</av:Point>
+              <av:Point x:Key="ShapeLocation">110,511</av:Point>
               <av:Size x:Key="ShapeSize">200,78</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">220,599 220,629 269.5,629 269.5,670</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">210,589 210,619 209.5,619 209.5,670</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="414,340" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,7 +192,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Invoke Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,20 +203,21 @@
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterFilePath">[in_TransactionItem.SpecificContent("VendorMasterDataFilePath").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterFileName">[in_TransactionItem.SpecificContent("VendorMasterDataFileName").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterFileSheetName">Sheet1</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorLookupsFilePath">[in_Config("strVlookupsFileRoot").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorLookupsFilePath">[in_Config.Item("strVlookupsFileRoot").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorLookupsFileName">Open Items Lookups.xlsx</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorLookupsFileSheetName">Sheet1</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFilePath">[in_TransactionItem.SpecificContent("VendorReportFilePath").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileSheetName">Data</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileSheetName">[in_Config.Item("strReportsSheetToMerge").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrSystem">[in_TransactionItem.SpecificContent("Report System").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_ComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
+                    <OutArgument x:TypeArguments="x:Int32" x:Key="Out_IntSummaryRows">[IntSummaryRows]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -294,10 +238,10 @@
                   </Assign>
                 </ActivityAction>
               </Catch>
-              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -310,7 +254,7 @@
                       <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Add Vlookups To Vendor Summary File] - {1}.", exception.Message, exception.Source))]</InArgument>
+                      <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Add Vlookups To Vendor Summary File - {1}.", exception.Message, exception.Source))]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </ActivityAction>
@@ -318,32 +262,411 @@
             </TryCatch.Catches>
           </TryCatch>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID7" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+            <FlowDecision x:Name="__ReferenceID6" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <av:Point x:Key="ShapeLocation">226,670</av:Point>
+                  <av:Point x:Key="ShapeLocation">166,670</av:Point>
                   <av:Size x:Key="ShapeSize">87,87</av:Size>
-                  <av:PointCollection x:Key="FalseConnector">313,713.5 539.5,713.5 539.5,730</av:PointCollection>
-                  <av:PointCollection x:Key="TrueConnector">206,813.5 179.5,813.5 179.5,1054.5</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">253,713.5 629.5,713.5 629.5,760</av:PointCollection>
+                  <av:PointCollection x:Key="TrueConnector">166,713.5 140,713.5 140,781 200,781 200,811</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">100,811</av:Point>
+                      <av:Size x:Key="ShapeSize">200,78</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">200,889 200,946.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Add Formulas.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFilePath">[in_TransactionItem.SpecificContent("VendorReportFilePath").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_ComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_IntNumberOfRows">[IntSummaryRows]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrCellValue">[in_Config("strFormula").ToString]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [Excel - Add Formulas] - {1}.", exception.Message, exception.Source))]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </ActivityAction>
+                      </Catch>
+                      <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [Excel - Add Formulas] - {1}.", exception.Message, exception.Source))]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID9" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">156.5,946.5</av:Point>
+                          <av:Size x:Key="ShapeSize">87,87</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">243.5,990 639.5,990 639.5,1030</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">156.5,990 141.5,990 141.5,1083.04 201.5,1083.04 201.5,1113.04</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">101.5,1113.04</av:Point>
+                              <av:Size x:Key="ShapeSize">200,78</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">201.5,1191.04 201.5,1245.04</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <Sequence DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Change Formula to Values.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_TransactionItem.SpecificContent("VendorReportFilePath").ToString]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt(in_Config("DelayShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[Cint(in_Config("TimeoutShort").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[Cint(in_Config("TimeoutMedium").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[Cint(in_Config("TimeoutLong").ToString)]</InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </ActivityAction>
+                              </Catch>
+                              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID14" Condition="[IsNothing(ProcessApplicationException) AND IsNothing(ProcessBusinessException)]" DisplayName="AE/BE Success?" sap:VirtualizedContainerService.HintSize="87,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">158,1245.04</av:Point>
+                                  <av:Size x:Key="ShapeSize">87,87</av:Size>
+                                  <av:PointCollection x:Key="FalseConnector">245,1288.54 621.5,1288.54 621.5,1375.04</av:PointCollection>
+                                  <av:PointCollection x:Key="TrueConnector">278,338.54 230,338.54 230,531</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <FlowDecision.False>
+                                <FlowDecision x:Name="__ReferenceID15" Condition="[IsNothing(ProcessBusinessException)]" DisplayName="AE?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">586.5,1375.04</av:Point>
+                                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">586.5,1418.54 481.5,1418.54 481.5,1483.04</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">656.5,1418.54 771.5,1418.54 771.5,1483.04</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID17">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">381.5,1483.04</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <TryCatch DisplayName="TryCatch AEHandler #1" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <TryCatch.Catches>
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ActivityAction x:TypeArguments="s:Exception">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                              </ActivityAction.Argument>
+                                              <Assign DisplayName="Assign ProcessApplicationException (Message/Source In Message For Both Original And Handler Exception)" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("{0}. Critical Failure Message: {1}. Critical Failure Source: {2}.", ProcessApplicationException.Message, exception.Message, exception.Source))]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </ActivityAction>
+                                          </Catch>
+                                        </TryCatch.Catches>
+                                      </TryCatch>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">671.5,1483.04</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <TryCatch DisplayName="TryCatch BEHandler #1" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <TryCatch.Catches>
+                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ActivityAction x:TypeArguments="s:Exception">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                              </ActivityAction.Argument>
+                                              <Assign DisplayName="Assign ProcessBusinessException (Message/Source In Message For Both Original And Handler Exception)" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("{0} Critical Failure Message: {1}. Critical Failure Source: {2}.", ProcessBusinessException.Message, exception.Message, exception.Source))]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </ActivityAction>
+                                          </Catch>
+                                        </TryCatch.Catches>
+                                      </TryCatch>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowDecision x:Name="__ReferenceID12" Condition="[IsNothing(ProcessBusinessException)]" DisplayName="AE?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">604.5,1030</av:Point>
+                              <av:Size x:Key="ShapeSize">70,87</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">604.5,1073.5 499.5,1073.5 499.5,1138</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">674.5,1073.5 789.5,1073.5 789.5,1138</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">399.5,1138</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <TryCatch DisplayName="TryCatch AEHandler #1" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Assign DisplayName="Assign ProcessApplicationException (Message/Source In Message For Both Original And Handler Exception)" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("{0}. Critical Failure Message: {1}. Critical Failure Source: {2}.", ProcessApplicationException.Message, exception.Message, exception.Source))]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowStep x:Name="__ReferenceID11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">689.5,1138</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <TryCatch DisplayName="TryCatch BEHandler #1" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_18">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Assign DisplayName="Assign ProcessBusinessException (Message/Source In Message For Both Original And Handler Exception)" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("{0} Critical Failure Message: {1}. Critical Failure Source: {2}.", ProcessBusinessException.Message, exception.Message, exception.Source))]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                            </FlowStep>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.True>
               <FlowDecision.False>
-                <FlowDecision x:Name="__ReferenceID6" Condition="[IsNothing(ProcessBusinessException)]" DisplayName="AE?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                <FlowDecision x:Name="__ReferenceID5" Condition="[IsNothing(ProcessBusinessException)]" DisplayName="AE?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">504.5,730</av:Point>
+                      <av:Point x:Key="ShapeLocation">594.5,760</av:Point>
                       <av:Size x:Key="ShapeSize">70,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">504.5,773.5 409.5,773.5 409.5,898</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">574.5,773.5 689.5,773.5 689.5,898</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">594.5,803.5 489.5,803.5 489.5,868</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">664.5,803.5 779.5,803.5 779.5,868</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID4">
+                    <FlowStep x:Name="__ReferenceID3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">309.5,898</av:Point>
+                          <av:Point x:Key="ShapeLocation">389.5,868</av:Point>
                           <av:Size x:Key="ShapeSize">200,51</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -354,10 +677,10 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -376,43 +699,14 @@
                             </ActivityAction>
                           </Catch>
                         </TryCatch.Catches>
-                        <TryCatch.Finally>
-                          <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                            <Throw DisplayName="Throw AE" Exception="[ProcessApplicationException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                          </Sequence>
-                        </TryCatch.Finally>
                       </TryCatch>
                     </FlowStep>
                   </FlowDecision.True>
                   <FlowDecision.False>
-                    <FlowStep x:Name="__ReferenceID5">
+                    <FlowStep x:Name="__ReferenceID4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">589.5,898</av:Point>
+                          <av:Point x:Key="ShapeLocation">679.5,868</av:Point>
                           <av:Size x:Key="ShapeSize">200,51</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -445,35 +739,6 @@
                             </ActivityAction>
                           </Catch>
                         </TryCatch.Catches>
-                        <TryCatch.Finally>
-                          <Sequence sap:VirtualizedContainerService.HintSize="336,273" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Sub-Process #1" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_Config(&quot;strSubProcessRoot&quot;).ToString+&quot;Open Items - Send Email.xaml&quot;]">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt( in_Config("DelayShort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt( in_Config("TimeoutShort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt( in_Config("TimeoutMedium").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt( in_Config("TimeoutLong").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[in_Config("LUX-01_ToEmailAddress").ToString]</InArgument>
-                                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
-                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[CINT(in_Config("LUX-01_EmailPort").ToString)]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[in_Config("LUX-01_EmailServer").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[in_Config("LUX-01_CCEmailAdress").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">\\file-dallas\Process_Automation\Dept\RPA\Test Input-Output Folders\Luxottica\LUX-2_Cybersource\sungls_ca</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailCredentials">[in_Config("LUX-01_FromEmailCredentials").ToString]</InArgument>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolSuccess">False</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
-                            <Throw DisplayName="Throw AE" Exception="[ProcessBusinessException]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
-                          </Sequence>
-                        </TryCatch.Finally>
                       </TryCatch>
                     </FlowStep>
                   </FlowDecision.False>
@@ -487,15 +752,30 @@
         <x:Reference>__ReferenceID2</x:Reference>
       </FlowDecision.False>
     </FlowDecision>
-    <FlowStep x:Name="__ReferenceID9">
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
+    <x:Reference>__ReferenceID17</x:Reference>
+    <FlowStep x:Name="__ReferenceID19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">211.5,133.04</av:Point>
+          <av:Point x:Key="ShapeLocation">220,131</av:Point>
           <av:Size x:Key="ShapeSize">200,78</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">311.5,211.04 311.5,285.04</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">320,209 320,239 321.5,239 321.5,285.04</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Change Formula to ValuesExcel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -503,13 +783,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Change Formula to Values.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Excel - Change Formula to Values" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Subprocesses\Excel - Change Formula to Values.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
@@ -525,7 +805,7 @@
           </Sequence>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -536,17 +816,17 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
+                  <InArgument x:TypeArguments="s:Exception">[new Exception(String.Format("Failure Message: {0}. Failure Source: [Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
                 </Assign.Value>
               </Assign>
             </ActivityAction>
           </Catch>
-          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -557,12 +837,12 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
               </ActivityAction.Argument>
-              <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                 <Assign.To>
                   <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [TryCatch Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
+                  <InArgument x:TypeArguments="ui:BusinessRuleException">[new BusinessRuleException(String.Format("Failure Message: {0}. Failure Source: [Excel - Change Formula to Values] - {1}.", exception.Message, exception.Source))]</InArgument>
                 </Assign.Value>
               </Assign>
             </ActivityAction>
@@ -570,13 +850,8 @@
         </TryCatch.Catches>
       </TryCatch>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID18</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID4</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
-    <x:Reference>__ReferenceID6</x:Reference>
-    <x:Reference>__ReferenceID7</x:Reference>
-    <x:Reference>__ReferenceID8</x:Reference>
   </Flowchart>
 </Activity>
