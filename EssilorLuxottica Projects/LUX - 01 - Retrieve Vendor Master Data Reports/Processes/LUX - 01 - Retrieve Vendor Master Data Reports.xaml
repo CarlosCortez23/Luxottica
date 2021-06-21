@@ -220,7 +220,7 @@
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt(in_Config.Item("TimeoutShort").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt(in_Config.Item("TimeoutMedium").ToString)]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(in_Config.Item("TimeoutLong").ToString)]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSaveDirectoryPath">[in_Config.Item("strVendorOpenItemOutputPath").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSaveDirectoryPath">[in_Config.Item("strTempFolderPath").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("FileName").tostring]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrEASearch" />
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrReportSystem">[in_TransactionItem.SpecificContent("Report System").tostring]</InArgument>
@@ -228,9 +228,10 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrAFSTCode">[in_Config.Item("strVendorMasterDataAFSTCode").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrFMSTCode">[in_Config.Item("strVendorMasterDataFMSTCode").ToString]</InArgument>
                           <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterReportFilePath">[in_Config.Item("strVendorOpenItemOutputPath").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterReportFileName">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+"Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterReportFilePath">[in_Config.Item("strTempFolderPath").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorMasterReportFileName">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config.Item("strVendorReportSheet").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -300,7 +301,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,835.5 300,884.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Report Name test" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Report: &quot;+ in_TransactionItem.SpecificContent(&quot;Report System&quot;).tostring+&quot; &quot;+ in_TransactionItem.SpecificContent(&quot;Invoice Status&quot;).tostring+&quot;Vendor Master Data&quot; +&quot; &quot;+ date.Now.ToString(&quot;MMddyyyy&quot;)]">
+                        <ui:LogMessage DisplayName="Report Name test" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Report: &quot;+ in_TransactionItem.SpecificContent(&quot;Report System&quot;).tostring+&quot; &quot;+ in_TransactionItem.SpecificContent(&quot;Invoice Status&quot;).tostring+&quot; Vendor Master Data&quot; +&quot; &quot;+ date.Now.ToString(&quot;MMddyyyy&quot;)]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -334,7 +335,7 @@
                                     <av:PointCollection x:Key="ConnectorLocation">300,1062.5 300,1116.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Edit Vendor Master Data File" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Edit Vendor Master Data File" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -356,7 +357,7 @@
                                           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(in_Config.Item("TimeoutLong").ToString)]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config.Item("strSheetName").ToString]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[in_Config.Item("strRange").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_Config.Item("strVendorOpenItemOutputPath").ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_Config.Item("strTempFolderPath").ToString]</InArgument>
                                           <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">[cbool(in_Config.Item("boolAddHeaders").ToString)]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strFMSColumns">[in_Config.Item("strFMSColumns").ToString]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strAFSColumns">[in_Config.Item("strAFSColumns").ToString]</InArgument>
@@ -364,8 +365,8 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrNewColumnName">[in_Config.Item("strNewColumnName").ToString]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrNewColumnName1">[in_Config.Item("strNewColumnName1").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileNameFMS">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+"Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileNameAFS">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+"Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileNameFMS">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileNameAFS">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" Vendor Master Data" +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strFMSVendorMasterFinal">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" VMD " +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strAFSVendorMasterFinal">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" VMD " +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrAFSColumn">[in_Config.Item("strAFSColumn").ToString]</InArgument>
@@ -444,7 +445,7 @@
                                             <InArgument x:TypeArguments="x:String" x:Key="Invoice Status">[in_TransactionItem.SpecificContent("Invoice Status").ToString]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="VendorReportFilePath">[in_TransactionItem.SpecificContent("FilePath").ToString]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="VendorReportFileName">[in_TransactionItem.SpecificContent("FileName").ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="VendorMasterDataFilePath">[in_Config.Item("strVendorOpenItemOutputPath").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="VendorMasterDataFilePath">[in_Config.Item("strTempFolderPath").ToString]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="VendorMasterDataFileName">[in_TransactionItem.SpecificContent("Report System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring+" VMD " +" "+ date.Now.ToString("MMddyyyy")+".xlsx"]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="Date">[now.ToShortDateString]</InArgument>
                                           </ui:AddQueueItem.ItemInformation>
