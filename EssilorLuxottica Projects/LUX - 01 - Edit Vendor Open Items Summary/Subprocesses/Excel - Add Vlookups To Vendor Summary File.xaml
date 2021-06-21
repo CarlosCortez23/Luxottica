@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CleanSAPReport" this:CleanSAPReport.in_StrVendorMasterFilePath="\\LRRBTUIPFSP100\Profiles\UIPATH_27\Desktop\GitHub\Luxottica\EssilorLuxottica Projects\LUX - 01 - Edit Vendor Open Items Summary\Data\Master Report" this:CleanSAPReport.in_StrVendorMasterFileName="FinalAFS.xlsx" this:CleanSAPReport.in_StrVendorMasterFileSheetName="Sheet1" this:CleanSAPReport.in_StrVendorLookupsFilePath="\\LRRBTUIPFSP100\Profiles\UIPATH_27\Desktop\GitHub\Luxottica\EssilorLuxottica Projects\LUX - 01 - Edit Vendor Open Items Summary\Data\Input" this:CleanSAPReport.in_StrVendorLookupsFileName="Open Items Lookups.xlsx" this:CleanSAPReport.in_StrVendorLookupsFileSheetName="Sheet1" this:CleanSAPReport.in_StrVendorSummaryFilePath="\\LRRBTUIPFSP100\Profiles\UIPATH_27\Desktop\GitHub\Luxottica\EssilorLuxottica Projects\LUX - 01 - Edit Vendor Open Items Summary\Data\summary" this:CleanSAPReport.in_StrVendorSummaryFileName="Vendor Open Items Summaryb.xlsx" this:CleanSAPReport.in_StrVendorSummaryFileSheetName="Data" this:CleanSAPReport.in_StrSystem="AFS" this:CleanSAPReport.in_ComponentRoot="\\LRRBTUIPFSP100\Profiles\UIPATH_27\Desktop\GitHub\Luxottica\EssilorLuxottica Projects\Components\" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CleanSAPReport" this:CleanSAPReport.in_StrVendorMasterFileSheetName="Sheet1" this:CleanSAPReport.in_StrVendorLookupsFileName="Open Items Lookups.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_StrVendorMasterFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_StrVendorMasterFileName" Type="InArgument(x:String)" />
@@ -10,8 +10,8 @@
     <x:Property Name="in_StrVendorSummaryFileName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrVendorSummaryFileSheetName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrSystem" Type="InArgument(x:String)" />
-    <x:Property Name="in_ComponentRoot" Type="InArgument(x:String)" />
     <x:Property Name="Out_IntSummaryRows" Type="OutArgument(x:Int32)" />
+    <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -73,7 +73,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="636,1255" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -121,7 +120,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,445.5 300,464.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Vlookups Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Vlookups Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorLookupsFileSheetName]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorLookupsFileName]</InArgument>
@@ -148,7 +147,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">300,515.5 300,534.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Master Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Master Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorMasterFileSheetName]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorMasterFileName]</InArgument>
@@ -173,7 +172,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">300,585.5 300,624.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Summary Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Summary Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range Without Range Parameter.xaml&quot;]">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorSummaryFileSheetName]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
@@ -198,13 +197,13 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,675.5 299.895,675.5 299.895,700</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="470,1569" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="440,2029" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="440,3717" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="ui:GenericValue" Name="GvVlookupResult" />
                             </Sequence.Variables>
@@ -221,10 +220,10 @@
                                 <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <TryCatch DisplayName="Try Catch Lookup BU" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                            <TryCatch DisplayName="Try Catch Lookup BU" sap:VirtualizedContainerService.HintSize="418,473" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -274,10 +273,10 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch vendor name" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                            <TryCatch DisplayName="Try Catch vendor name" sap:VirtualizedContainerService.HintSize="418,473" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -380,10 +379,10 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Macrocategory" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                            <TryCatch DisplayName="Try Catch Macrocategory" sap:VirtualizedContainerService.HintSize="418,473" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -433,10 +432,10 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Procurement Area" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                            <TryCatch DisplayName="Try Catch Procurement Area" sap:VirtualizedContainerService.HintSize="418,473" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -804,7 +803,7 @@
                                 <av:Size x:Key="ShapeSize">200,51</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Summary Data Table" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Write Range (Excel Scope).xaml&quot;]">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Summary Data Table" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Write Range (Excel Scope).xaml&quot;]">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">[dtSummary]</InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
