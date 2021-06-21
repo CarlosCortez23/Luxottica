@@ -128,9 +128,9 @@
                 <OutArgument x:TypeArguments="x:String">[strEmailBody]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hello Luxottica," + vbNewLine +
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hello Luxottica Team," + vbNewLine +
 vbNewLine +
-"The vendor open items master report for "+ now.ToString("dd/MM/yyyy") +" is now done" +
+"The Vendor Open Items Summary Report for "+ now.ToString("MM/dd/yyyy") +" has been completed." +
 vbNewLine +
 vbNewLine +
 "Cheers," + vbNewLine +
