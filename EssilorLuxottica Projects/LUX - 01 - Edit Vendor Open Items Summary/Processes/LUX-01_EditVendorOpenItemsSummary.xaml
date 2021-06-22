@@ -184,7 +184,7 @@
               <av:PointCollection x:Key="ConnectorLocation">210,589 210,619 209.5,619 209.5,670</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,8 +210,8 @@
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileSheetName">[in_Config.Item("strReportsSheetToMerge").ToString]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_StrSystem">[in_TransactionItem.SpecificContent("Report System").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_ComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                     <OutArgument x:TypeArguments="x:Int32" x:Key="Out_IntSummaryRows">[IntSummaryRows]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
@@ -281,7 +281,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">200,889 200,946.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                  <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -300,9 +300,9 @@
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileSheetName">[in_Config("strReportsSheetToMerge").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFileName">[in_TransactionItem.SpecificContent("VendorReportFileName").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrVendorSummaryFilePath">[in_TransactionItem.SpecificContent("VendorReportFilePath").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ComponentRoot">[in_Config("strComponentRoot").ToString]</InArgument>
                             <InArgument x:TypeArguments="x:Int32" x:Key="in_IntNumberOfRows">[IntSummaryRows]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrCellValue">[in_Config("strFormula").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>

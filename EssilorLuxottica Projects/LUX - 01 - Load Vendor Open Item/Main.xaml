@@ -65,7 +65,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="* Performs Any Activities Required To Access/Extract Load Data&#xA;* Adds Data To The Queue" DisplayName="Load Items" sap:VirtualizedContainerService.HintSize="211,142" sap2010:WorkflowViewState.IdRef="State_3">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="* Performs Any Activities Required To Access/Extract Load Data&#xA;* Adds Data To The Queue" DisplayName="Load Items" sap:VirtualizedContainerService.HintSize="444,1016" sap2010:WorkflowViewState.IdRef="State_3">
       <State.Entry>
         <TryCatch DisplayName="TryCatch Load Items " sap:VirtualizedContainerService.HintSize="418,560" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -89,7 +89,7 @@
                   <InArgument x:TypeArguments="ui:BusinessRuleException">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Load Contract Worksheets" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Processes\LUX - 01 - Load Vendor Open Item Queue.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Process" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Processes\LUX - 01 - Load Vendor Open Item Queue.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem" />
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>

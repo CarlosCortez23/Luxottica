@@ -3,16 +3,16 @@
     <x:Property Name="in_StrVendorSummaryFileSheetName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrVendorSummaryFileName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrVendorSummaryFilePath" Type="InArgument(x:String)" />
-    <x:Property Name="in_ComponentRoot" Type="InArgument(x:String)" />
     <x:Property Name="in_IntNumberOfRows" Type="InArgument(x:Int32)" />
     <x:Property Name="in_StrCellValue" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Excel___Add_Formulas.in_ComponentRoot>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Excel___Add_Formulas.in_ComponentRoot>
   <this:Excel___Add_Formulas.in_StrCellValue>
     <InArgument x:TypeArguments="x:String" />
   </this:Excel___Add_Formulas.in_StrCellValue>
+  <this:Excel___Add_Formulas.in_StrComponentRoot>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Excel___Add_Formulas.in_StrComponentRoot>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
@@ -65,7 +65,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Excel - Add Formulas" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -91,7 +90,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,215.5 300,244.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Cell Value" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Write Cell Value.xaml&quot;]">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Cell Value" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Write Cell Value.xaml&quot;]">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
@@ -115,7 +114,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,295.5 300,324.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Autofill Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Auto Fill Range.xaml&quot;]">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Autofill Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Auto Fill Range.xaml&quot;]">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
@@ -139,7 +138,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,375.5 300,404.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Change Type Column" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Change Type Column (Global).xaml&quot;]">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Change Type Column" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Change Type Column (Global).xaml&quot;]">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrVendorSummaryFileName]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_StrFilePath">[in_StrVendorSummaryFilePath]</InArgument>
@@ -162,7 +161,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,455.5 300,484.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Cell Value" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Write Cell Value.xaml&quot;]">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Write Cell Value" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Write Cell Value.xaml&quot;]">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
@@ -186,7 +185,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">310,295.5 310,324.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Autofill Range" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_ComponentRoot+&quot;Excel\Excel - Auto Fill Range.xaml&quot;]">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Autofill Range" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Auto Fill Range.xaml&quot;]">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrVendorSummaryFilePath]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>

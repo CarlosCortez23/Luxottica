@@ -64,6 +64,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="1106,2393" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -203,7 +204,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">300,592.5 300,646.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Navigate to Retrieve Vendor Report" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Navigate to Retrieve Vendor Report" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -226,6 +227,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrEASearch">[in_Config.Item("strVendorReportTCode").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSAPVariant">[in_Config.Item("strVendorOpenItemVariant").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrInvoiceStatus">[in_TransactionItem.SpecificContent("Invoice Status").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -317,6 +319,7 @@
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(in_Config.Item("TimeoutLong").ToString)]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSaveDirectoryPath">[in_Config.Item("strVendorOpenItemInputPath").ToString]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("System").tostring+" "+ in_TransactionItem.SpecificContent("Invoice Status").tostring +" "+ date.Now.ToString("MMddyyyy")+".xls"]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
@@ -419,7 +422,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">300,1425.5 300,1476.04</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="System - Copy File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\System\System - Copy File.xaml">
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="System - Copy File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_Config.Item(&quot;strComponentRoot&quot;).ToString+&quot;System\System - Copy File.xaml&quot;]">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromPath">[in_Config.Item("strCopyFromPath").ToString]</InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromName">[in_Config.Item("strCopyFromName").ToString]</InArgument>
@@ -504,7 +507,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">300,1662.5 300,1706.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Format File - Edit and Format Vendor Report File" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                                <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Format File - Edit and Format Vendor Report File" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -533,6 +536,7 @@
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateFileName">[in_Config.Item("strCopyToName").ToString]</InArgument>
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplateSheetName">[in_Config.Item("strTemplateSheetName").ToString]</InArgument>
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrOutputFolderPath">[in_Config.Item("strOutputFolderPath").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                       </ui:InvokeWorkflowFile>
                                                     </Sequence>

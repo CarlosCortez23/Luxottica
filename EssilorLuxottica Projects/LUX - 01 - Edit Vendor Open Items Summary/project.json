@@ -1,5 +1,5 @@
 {
-  "name": "LUX - 01 - Edit Vendor Open Items Summary",
+  "name": "ESS1-LUX-01-EditVendorOpenItemsSummary",
   "description": "LUX - 01 - Edit Vendor Open Items Summary",
   "main": "Main.xaml",
   "dependencies": {
@@ -11,7 +11,7 @@
   },
   "schemaVersion": "3.2",
   "studioVersion": "17.1",
-  "projectVersion": "1.0.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -24,6 +24,10 @@
   "libraryOptions": {
     "includeOriginalXaml": false,
     "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [],
+    "output": []
   },
   "webServices": []
 }

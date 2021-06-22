@@ -7,6 +7,7 @@
     <x:Property Name="in_StrEASearch" Type="InArgument(x:String)" />
     <x:Property Name="in_StrSAPVariant" Type="InArgument(x:String)" />
     <x:Property Name="in_StrInvoiceStatus" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -88,7 +89,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,175.02 300,214.02</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Easy Access Screen - Type Into Search Bar" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Easy Access Screen - Type Into Search Bar.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Easy Access Screen - Type Into Search Bar" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Easy Access Screen - Type Into Search Bar.xaml&quot;]">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
           <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -111,7 +112,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,265.02 300,304.02</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Click Get Variant Button" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Vendor Line Item Display - Click Get Variant Button.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Click Get Variant Button" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Vendor Line Item Display - Click Get Variant Button.xaml&quot;]">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -133,7 +134,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,355.02 300,394.02</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Find Variant Sub-Window - Type Into Variant Field" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Find Variant Sub-Window - Type Into Variant Field.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Find Variant Sub-Window - Type Into Variant Field" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Find Variant Sub-Window - Type Into Variant Field.xaml&quot;]">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -156,7 +157,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,445.02 300,484.02</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Find Variant Sub-Window - Click Execute" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Find Variant Sub-Window - Click Execute.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Find Variant Sub-Window - Click Execute" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Find Variant Sub-Window - Click Execute.xaml&quot;]">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -244,7 +245,7 @@
                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Check Normal Items" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Vendor Line Item Display - Check Normal Items.xaml">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Check Normal Items" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Vendor Line Item Display - Check Normal Items.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -267,7 +268,7 @@
                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Check Parked Items" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="C:\EssilorLuxottica Projects\Components\SAP\SAP - Vendor Line Item Display - Check Parked Items.xaml">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Vendor Line Item Display - Check Parked Items" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Vendor Line Item Display - Check Parked Items.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
