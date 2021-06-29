@@ -77,7 +77,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Excel - Copy from x to y Sheet" sap:VirtualizedContainerService.HintSize="583,3296" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -214,13 +213,13 @@
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Vendor Open Items Summaryb - Excel' /&gt;&lt;wnd cls='EXCEL7' omit:title='Vendor Open Items Summaryb' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
             <ui:SendHotkey DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="[in_IntDefaultDelay]" DelayMS="[in_IntDefaultDelay]" DisplayName="Save" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="s" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Vendor Open Items Summaryb - Excel' /&gt;&lt;wnd cls='EXCEL7' omit:title='Vendor Open Items Summaryb' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="COMPLETE" />
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+            <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>

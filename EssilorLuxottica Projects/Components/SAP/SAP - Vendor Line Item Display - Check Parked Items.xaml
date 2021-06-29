@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,2789</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2184</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,7 +66,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2709" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Automation Component" sap:VirtualizedContainerService.HintSize="605,2104" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SAP - Vendor Line Item Display - Check Parked Items" Name="strComponentName" />
     </Sequence.Variables>
@@ -75,31 +75,31 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="583,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component Check the Parked items checkbox option&#xA;&#xA;Pre condition: Parked Items checkbox exist&#xA;&#xA;Post condition: Parked Items checkbox is checked correctly&#xD;&#xA;&#xA;Arguments: none" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="583,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component Check the Parked items checkbox option&#xA;&#xA;Pre condition: Parked Items checkbox exist&#xA;&#xA;Post condition: Parked Items checkbox is checked correctly&#xA;&#xA;Arguments: none" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
-    <Sequence DisplayName="SAP - Vendor Line Item Display - Check Parked Items" sap:VirtualizedContainerService.HintSize="583,2074" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="SAP - Vendor Line Item Display - Check Parked Items" sap:VirtualizedContainerService.HintSize="583,1469" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="561,198" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence DisplayName="Check Arguments In" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Argument In is not applicable to this component" />
       </Sequence>
-      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,509" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <Sequence DisplayName="Pre Condition Check" sap:VirtualizedContainerService.HintSize="561,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="boolPreConditionMet" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -153,7 +153,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:ImageFound DisplayName="Post Condition Criteria" Found="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
           <ui:ImageFound.Image>
-            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAPCAYAAACP3GNFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMOSURBVFhH7VhBaxNBFN6fFFram0cjIpUgxIIUMXgL9OQhiFijUKFQhSIEevFSwYskWFIrYitWSqq0h1gJpRhiIyFWBYsp0gjhue/t7OTt7MzuVrogmIUP+ma+fO/NN28m3VjbrQ4MEC+sJxt7cHl2BU5dK4Xiyr1VKL1raoUGMMNK3X4Gi68/QLv9NRSlV9tw8e4LrdBfY30GEsMzsKSbi4qT0IgRVvL6U9itf4Zu97cWBwc/oVxegcPDX8RDvhTAxVkWWBIZKDDxSIjbZDlXhdzwKOTWNZyYIU02PXNzDyGROGN38r7B5L6xS/lRsI5rWNwmS/yjJjebLRgZOQfJ5CU4OuqGmsxjMpx1eSJf7XNsQ3ITovM9BhUhjfyJosiBxrgaikGUy52zYTKZ9DOQljoq35BDrCXH1pFe6ECB6vZy+2NsnQyBJk9O3qQuLpdfUnwckyVHjoui6G+nYDlHC3YWy4vE4mW8kPEZ49cQMYdH39/JxhyiTs8cr9vleuoq2ptiMLneaEGttgup1FXY3HxPhq6tvSWDx8ez0Ov1aAx5QSbTjsou5GALVA2h2Ok0bxdgV/MNw5hvlLK5XJNDzulMDsnhq1MTe0zWwzZ5ERrNNlSrNTJ1aOgszM8/grGxDMWVyhYZjA/ykC8FMJE4JgQlmffKCCje5fANUrUJQkNdmKrJIec0JgflUDWNsXOq3M/LTmcgk5utfTJxevoB3cFoLiKbvUHj7oM8v8ma6wFBx8udC+tkjJ37uF+k2mUMRg3G8c1F6WSGsByanKYvfuu0bVqr/V3YCJDP3yejsaN3dj6KUedBHvKlACYyFEkJ3c4kXoQOoY3pG+G5Lyl2c7FjbceB/9UwfdRTO82YI6hOFhfy9peju3FYv+a6JJO/fPshbHSeqalZgvogL6rJjhHiGNGdG8FkG84V4xroPYqeBdCGOOMJ2xiPJgfXp3qFluQbcoTUKWNWh+k9wbpw5zmsbn2il40wLG/UIX3Sb3z/AazHbxpw/tay9rcKFcgrVva0QgOYMfgVLnZ04A/wNuKpbWBm7wAAAABJRU5ErkJggg==" />
+            <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAPCAYAAACP3GNFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMOSURBVFhH7VhBaxNBFN6fFFram0cjIpUgxIIUMXgL9OQhiFijUKFQhSIEevFSwYskWFIrYitWSqq0h1gJpRhiIyFWBYsp0gjhue/t7OTt7MzuVrogmIUP+ma+fO/NN28m3VjbrQ4MEC+sJxt7cHl2BU5dK4Xiyr1VKL1raoUGMMNK3X4Gi68/QLv9NRSlV9tw8e4LrdBfY30GEsMzsKSbi4qT0IgRVvL6U9itf4Zu97cWBwc/oVxegcPDX8RDvhTAxVkWWBIZKDDxSIjbZDlXhdzwKOTWNZyYIU02PXNzDyGROGN38r7B5L6xS/lRsI5rWNwmS/yjJjebLRgZOQfJ5CU4OuqGmsxjMpx1eSJf7XNsQ3ITovM9BhUhjfyJosiBxrgaikGUy52zYTKZ9DOQljoq35BDrCXH1pFe6ECB6vZy+2NsnQyBJk9O3qQuLpdfUnwckyVHjoui6G+nYDlHC3YWy4vE4mW8kPEZ49cQMYdH39/JxhyiTs8cr9vleuoq2ptiMLneaEGttgup1FXY3HxPhq6tvSWDx8ez0Ov1aAx5QSbTjsou5GALVA2h2Ok0bxdgV/MNw5hvlLK5XJNDzulMDsnhq1MTe0zWwzZ5ERrNNlSrNTJ1aOgszM8/grGxDMWVyhYZjA/ykC8FMJE4JgQlmffKCCje5fANUrUJQkNdmKrJIec0JgflUDWNsXOq3M/LTmcgk5utfTJxevoB3cFoLiKbvUHj7oM8v8ma6wFBx8udC+tkjJ37uF+k2mUMRg3G8c1F6WSGsByanKYvfuu0bVqr/V3YCJDP3yejsaN3dj6KUedBHvKlACYyFEkJ3c4kXoQOoY3pG+G5Lyl2c7FjbceB/9UwfdRTO82YI6hOFhfy9peju3FYv+a6JJO/fPshbHSeqalZgvogL6rJjhHiGNGdG8FkG84V4xroPYqeBdCGOOMJ2xiPJgfXp3qFluQbcoTUKWNWh+k9wbpw5zmsbn2il40wLG/UIX3Sb3z/AazHbxpw/tay9rcKFcgrVva0QgOYMfgVLnZ04A/wNuKpbWBm7wAAAABJRU5ErkJggg==" />
           </ui:ImageFound.Image>
           <ui:ImageFound.Target>
             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Vendor Line Item Display' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
