@@ -120,7 +120,7 @@
               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorSummaryFileSheetName]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrDestinationRange">["AF2:AF"+ in_IntNumberOfRows.ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrDestinationRange">["AF2:AF"+ (in_IntNumberOfRows+1).ToString]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrSourceRange">AF2</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
@@ -191,7 +191,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrVendorSummaryFileName]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrVendorSummaryFileSheetName]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrDestinationRange">["AJ2:AJ"+ in_IntNumberOfRows.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_StrDestinationRange">["AJ2:AJ"+(in_IntNumberOfRows+1).ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSourceRange">AJ2</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
