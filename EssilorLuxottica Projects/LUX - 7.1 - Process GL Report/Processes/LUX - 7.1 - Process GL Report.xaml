@@ -66,6 +66,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="LUX - 7.1 - Process GL Report" sap:VirtualizedContainerService.HintSize="1045,2202" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -108,7 +109,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,262.5 300,316.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Generic Login" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Generic Login" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -298,7 +299,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">300,859 300,876.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Navigate To GL  Report" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="SAP - Navigate To GL  Report" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -422,6 +423,7 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFileName">[in_Config.Item("strFalloutApplicationFile").ToString]</InArgument>
                                           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BoolMerge">[boolMerge]</OutArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFilePath">[in_Config.Item("strFalloutApplicationPath").ToString]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFinalFolder">[in_Config.Item("strGLFinalReportPath").ToString]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
@@ -523,7 +525,7 @@
                                                       <InArgument x:TypeArguments="x:String" x:Key="StrCopyFromName">[in_Config.Item("strTemplateName").ToString]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").ToString]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_Config.Item("strGLReportSheetName").ToString]</InArgument>
-                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrFinalWorkbookPath">[in_Config.Item("strGLReportFolder").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrFinalWorkbookPath">[in_Config.Item("strGLFinalReportPath").ToString]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrFinalWorkbookName">[in_Config.Item("strGLReportFile").ToString]</InArgument>
                                                       <InArgument x:TypeArguments="x:String" x:Key="in_StrFinalSheetName">[in_Config.Item("strGLReportSheetName").ToString]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
@@ -595,7 +597,7 @@
                                                         <av:PointCollection x:Key="ConnectorLocation">290,1799 290,1854.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Execute Macro" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                                                    <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Excel - Execute Macro" sap:VirtualizedContainerService.HintSize="418,527" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -619,8 +621,6 @@
                                                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt(in_Config.Item("TimeoutShort").ToString)]</InArgument>
                                                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt(in_Config.Item("TimeoutMedium").ToString)]</InArgument>
                                                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(in_Config.Item("TimeoutLong").ToString)]</InArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileToDelete">[in_Config.Item("strGLBANKFileName").ToString]</InArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileToDeletePath">[in_Config.Item("strGLBANKFilePath").ToString]</InArgument>
                                                             </ui:InvokeWorkflowFile.Arguments>
                                                           </ui:InvokeWorkflowFile>
                                                         </Sequence>

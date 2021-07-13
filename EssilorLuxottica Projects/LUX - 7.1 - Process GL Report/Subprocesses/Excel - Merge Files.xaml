@@ -97,7 +97,7 @@
             <av:PointCollection x:Key="ConnectorLocation">300,279.5 300,329.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Files From directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\Generic - Get Files From Directory.xaml&quot;]">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Files From directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Generic\Generic - Get Files From Directory.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrPathFolder">[in_StrPathFolder]</InArgument>
             <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="out_LstFiles">[LstFiles]</OutArgument>
@@ -160,7 +160,7 @@
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Read Range.xaml&quot;]">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[fileInfo.Name+".xlsx"]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[fileInfo.Name]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrPathFolder]</InArgument>
                               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtTempData]</OutArgument>
                               <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">False</InArgument>
@@ -207,7 +207,7 @@
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Copy merge template" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Copy File.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromPath">[in_StrCopyFromPath]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromName">[in_StrCopyFromPath]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromName">[StrCopyFromName]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyToName">[in_StrFinalWorkbookName]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyToPath">[in_StrFinalWorkbookPath]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>

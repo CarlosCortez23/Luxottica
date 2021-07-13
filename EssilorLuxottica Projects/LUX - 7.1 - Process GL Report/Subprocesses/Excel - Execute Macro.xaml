@@ -8,15 +8,7 @@
     <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutM" Type="InArgument(x:Int32)" />
     <x:Property Name="in_IntDefaultTimeoutL" Type="InArgument(x:Int32)" />
-    <x:Property Name="in_StrFileToDelete" Type="InArgument(x:String)" />
-    <x:Property Name="in_StrFileToDeletePath" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Excel___Execute_Macro.in_StrFileToDelete>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Excel___Execute_Macro.in_StrFileToDelete>
-  <this:Excel___Execute_Macro.in_StrFileToDeletePath>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Excel___Execute_Macro.in_StrFileToDeletePath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
