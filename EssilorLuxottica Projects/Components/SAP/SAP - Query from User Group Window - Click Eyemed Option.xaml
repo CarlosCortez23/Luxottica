@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,2166</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2206</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
             </ui:CursorPosition>
           </ui:Click.CursorPosition>
           <ui:Click.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="511183e8b89a77ccac6a2e05957365e8" Selector="&lt;wnd app='saplogon.exe' title='Query from User Group*' aaname='Query from User Group*' /&gt;&lt;sap colName='DBBGTEXT' id='usr/cntlGRID1/shellcont/shell' tableRow='32' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="511183e8b89a77ccac6a2e05957365e8" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Query from User Group /SAPQUERY/AM: Initial Screen' /&gt;&lt;sap colName='DBBGTEXT' id='usr/cntlGRID1/shellcont/shell' tableRow='33' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:Click.Target>
         </ui:Click>
       </Sequence>

@@ -1,0 +1,33 @@
+{
+  "name": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
+  "description": "LUX - 01 - Retrieve Vendor Master Data Reports",
+  "main": "Main.xaml",
+  "dependencies": {
+    "BalaReva.Excel.Activities": "2020.3.3",
+    "UiPath.Excel.Activities": "[2.5.4]",
+    "UiPath.Mail.Activities": "[1.4.1]",
+    "UiPath.System.Activities": "[19.4.1]",
+    "UiPath.UIAutomation.Activities": "[19.4.2]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "17.1",
+  "projectVersion": "1.0.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  },
+  "webServices": []
+}

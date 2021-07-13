@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>645,2661</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>645,2701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,7 +75,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="583,228" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component click the find button in the Query From user group window&#xA;&#xA;Pre condition: Query From user group window is open&#xA;&#xA;Post condition: Query From user group window was closed&#xD;&#xA;&#xA;Arguments: none" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="583,228" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Summary:  This component click the find button in the Query From user group window&#xA;&#xA;Pre condition: Query From user group window is open&#xA;&#xA;Post condition: Query From user group window was closed&#xA;&#xA;Arguments: none" />
     <ui:LogMessage DisplayName="Log Message - Start Log" sap:VirtualizedContainerService.HintSize="583,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Starting sequence &quot; + strComponentName]" />
     <Sequence DisplayName="SAP - Query from User Group Window - Click Choose Option" sap:VirtualizedContainerService.HintSize="583,1927" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
@@ -156,14 +156,14 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Window Vanish" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_1" WaitNotActive="False" WaitNotVisible="False">
+        <ui:WaitUiElementVanish ContinueOnError="True" DisplayName="Wait Window Vanish" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_1" WaitNotActive="True" WaitNotVisible="True">
           <ui:WaitUiElementVanish.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d39c8ed70bbff86720011fb77ab0165e" Selector="&lt;wnd app='saplogon.exe' title='Query from User Group*' aaname='Query from User Group*' /&gt;" TimeoutMS="[in_IntDefaultTimeoutM]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d39c8ed70bbff86720011fb77ab0165e" Selector="&lt;wnd app='saplogon.exe' title='Query from User Group*' aaname='Query from User Group*' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutM]" WaitForReady="INTERACTIVE" />
           </ui:WaitUiElementVanish.Target>
         </ui:WaitUiElementVanish>
         <ui:UiElementExists DisplayName="Post Condition Criteria" Exists="[boolPostConditionMet]" sap:VirtualizedContainerService.HintSize="539,106" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
           <ui:UiElementExists.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1d29cdc057c4da3978d300fac945d964" Selector="&lt;wnd app='saplogon.exe' title='Query from User Group /SAPQUERY/AM: Initial Screen' aaname='Query from User Group /SAPQUERY/AM: Initial Screen' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1d29cdc057c4da3978d300fac945d964" Selector="&lt;wnd app='saplogon.exe' title='Query from User Group*' aaname='Query from User Group*' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="INTERACTIVE" />
           </ui:UiElementExists.Target>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
