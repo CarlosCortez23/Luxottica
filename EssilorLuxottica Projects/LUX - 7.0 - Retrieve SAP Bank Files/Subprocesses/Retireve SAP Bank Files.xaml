@@ -1,0 +1,437 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Retireve_SAP_Bank_Files" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrBankFilesPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
+    <x:Property Name="in_IntDefaultDelay" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutM" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutL" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_StrCashAccountsTemplateFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCashAccountsTemplateFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCashAccountsTemplateSheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_BoolAddHeaders" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_StrRange" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrLoadSAPBankFilesQueue" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>896,1400</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Retireve SAP Bank Files" sap:VirtualizedContainerService.HintSize="856,1320" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="lstSAPBankFiles" />
+      <Variable x:TypeArguments="x:Int32" Name="intCounter" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCashTemplate" />
+      <Variable x:TypeArguments="x:String" Name="strBankCode" />
+      <Variable x:TypeArguments="x:String" Name="strBankFileName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCashTemplateFiltered" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">420,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">450,77.5 450,134.02</av:PointCollection>
+        <x:Double x:Key="Height">1284</x:Double>
+        <x:Double x:Key="Width">842</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID10</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">350,134.02</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">450,185.02 450,215.02 449.895,215.02 449.895,230</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Generic - Get Files From Directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Generic\Generic - Get Files From Directory.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_StrPathFolder">[in_StrBankFilesPath]</InArgument>
+          <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="out_LstFiles">[lstSAPBankFiles]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">328.895,230</av:Point>
+              <av:Size x:Key="ShapeSize">242,60</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">449.895,290 449.895,320 580.141666666667,320 580.141666666667,346.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <FlowDecision x:Name="__ReferenceID0" Condition="[intCounter&lt;lstSAPBankFiles.Count]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">540.641666666667,346.5</av:Point>
+                  <av:Size x:Key="ShapeSize">79,87</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">540.641666666667,390 299.895,390 299.895,460</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">178.895,460</av:Point>
+                      <av:Size x:Key="ShapeSize">242,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">299.895,520 299.895,550 300.141666666667,550 300.141666666667,566.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Retrieve the File Name" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strBankFileName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[lstSAPBankFiles(intCounter).ToString.replace(in_StrBankFilesPath,"")]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID4" Condition="[strBankFileName.Contains(&quot;SAP-X&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">260.641666666667,566.5</av:Point>
+                          <av:Size x:Key="ShapeSize">79,87</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">339.641666666667,610 460,610 460,664.5</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">260.641666666667,610 121,610 121,660</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">0,660</av:Point>
+                              <av:Size x:Key="ShapeSize">242,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">121,720 121,750 140,750 140,774.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Retrieve Bank Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[strBankCode]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[strBankFileName.Substring(5,4)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">40,774.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">140,825.5 140,855.5 121,855.5 121,880</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrCashAccountsTemplateSheetName]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrCashAccountsTemplateFileName]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrCashAccountsTemplateFilePath]</InArgument>
+                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtCashTemplate]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">[in_BoolAddHeaders]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[in_StrRange]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">0,880</av:Point>
+                                      <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">121,940 121,970 140,970 140,984.02</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Filter by Bank Code" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="sd:DataTable">[dtCashTemplateFiltered]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="sd:DataTable">[dtCashTemplate.Select("[Bank Code]="+strBankCode+"").CopyToDataTable]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID9">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">40,984.02</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">140,1035.02 140,1065.02 131,1065.02 131,1100</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="Add Values to the Queue" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtCashTemplateFiltered]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="366,425" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                          <ui:ForEachRow.Body>
+                                            <ActivityAction x:TypeArguments="sd:DataRow">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,277" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Variant Name: &quot;+row(&quot;Variant Name&quot;).ToString + &quot; Bank Code: &quot;+row(&quot;Bank Code&quot;).ToString + &quot; ACCT: &quot;+row(&quot;ACCT&quot;).ToString + &quot; BANK ACCT: &quot;+row(&quot;BANK ACCT&quot;).ToString + &quot; Bank Routing Number: &quot;+row(&quot;Bank Routing Number&quot;).ToString]" />
+                                                <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_StrLoadSAPBankFilesQueue]" Reference="[row(&quot;Bank Code&quot;).ToString +&quot;_&quot;+now.ToShortDateString]">
+                                                  <ui:AddQueueItem.ItemInformation>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Bank Code">[row("Bank Code").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Variant Name">[row("Variant Name").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Acct">[row("ACCT").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Bank Acct">[row("BANK ACCT").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Bank Routing Number">[row("Bank Routing Number").ToString]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Bank File Path">[in_StrBankFilesPath]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="Bank File Name">[strBankFileName]</InArgument>
+                                                  </ui:AddQueueItem.ItemInformation>
+                                                </ui:AddQueueItem>
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEachRow.Body>
+                                        </ui:ForEachRow>
+                                      </Sequence>
+                                      <FlowStep.Next>
+                                        <x:Reference>__ReferenceID1</x:Reference>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">360,664.5</av:Point>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">460,715.5 460,1070 131,1070 131,1100</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Warn" Message="[&quot;The File Name: &quot; +strBankFileName +&quot; has incorrect format name.&quot;]" />
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">10,1100</av:Point>
+                                  <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">131,1160 131,1190 580.141666666667,1190 580.141666666667,433.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID0</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.True>
+            </FlowDecision>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">30,34.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Retrieve Info File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="727,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strBankFileName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[lstSAPBankFiles(intCounter).ToString.replace(in_StrBankFilesPath,"")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <If Condition="[strBankFileName.Contains(&quot;SAP-X&quot;)]" sap:VirtualizedContainerService.HintSize="727,1486" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="388,1338" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;File Name: &quot;+strBankFileName]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strBankCode]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[strBankFileName.Substring(5,4)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Bank Code: &quot;+strBankCode]" />
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="366,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrCashAccountsTemplateSheetName]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrCashAccountsTemplateFileName]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrCashAccountsTemplateFilePath]</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtCashTemplate]</OutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">[in_BoolAddHeaders]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[in_StrRange]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;DT Original rows number: &quot;+dtCashTemplate.Rows.Count.ToString]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd:DataTable">[dtCashTemplateFiltered]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd:DataTable">[dtCashTemplate.Select("[Bank Code]="+strBankCode+"").CopyToDataTable]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;DT Filtered rows number: &quot;+dtCashTemplateFiltered.Rows.Count.ToString]" />
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtCashTemplateFiltered]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="366,363" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,215" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Variant Name: &quot;+row(&quot;Variant Name&quot;).ToString + &quot; Bank Code: &quot;+row(&quot;Bank Code&quot;).ToString + &quot; ACCT: &quot;+row(&quot;ACCT&quot;).ToString + &quot; BANK ACCT: &quot;+row(&quot;BANK ACCT&quot;).ToString + &quot; Bank Routing Number: &quot;+row(&quot;Bank Routing Number&quot;).ToString]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;The File Name: &quot; +strBankFileName +&quot; has incorrect format name.&quot;]" />
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+    </FlowStep>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+  </Flowchart>
+</Activity>
