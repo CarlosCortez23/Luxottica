@@ -1117,15 +1117,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\UIPATH_27\\.nuget\\packages\\": {}
+    "C:\\Users\\Uipath_26\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
-      "projectName": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
-      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Retrieve GL Bank Report\\.local",
-      "packagesPath": "C:\\Users\\UIPATH_27\\.nuget\\packages\\",
-      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Retrieve GL Bank Report\\.local"
+      "projectUniqueName": "ESS1-LUX-7.1-RetrieveGLBankReport",
+      "projectName": "ESS1-LUX-7.1-RetrieveGLBankReport",
+      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\Uipath_26\\Desktop\\EssilorLuxottica Projects\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Retrieve GL Bank Report\\.local",
+      "packagesPath": "C:\\Users\\Uipath_26\\.nuget\\packages\\",
+      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\Uipath_26\\Desktop\\EssilorLuxottica Projects\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Retrieve GL Bank Report\\.local"
     },
     "frameworks": {
       "net461": {

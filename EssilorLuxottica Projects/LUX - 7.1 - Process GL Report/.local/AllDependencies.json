@@ -1121,11 +1121,11 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
-      "projectName": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
-      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Process GL Report\\.local",
+      "projectUniqueName": "ESS1-LUX-7.1-ProcessGLReport",
+      "projectName": "ESS1-LUX-7.1-ProcessGLReport",
+      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Process GL Report\\.local",
       "packagesPath": "C:\\Users\\UIPATH_27\\.nuget\\packages\\",
-      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Process GL Report\\.local"
+      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Process GL Report\\.local"
     },
     "frameworks": {
       "net461": {

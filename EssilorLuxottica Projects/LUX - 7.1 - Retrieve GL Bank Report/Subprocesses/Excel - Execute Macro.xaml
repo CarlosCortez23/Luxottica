@@ -69,7 +69,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Excel - Execute Macro" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -89,7 +88,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,194.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,214.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Execute Macro" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Execute Macro.xaml&quot;]">
@@ -112,11 +111,11 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,194.5</av:Point>
+              <av:Point x:Key="ShapeLocation">200,214.5</av:Point>
               <av:Size x:Key="ShapeSize">200,51</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Delete File.xaml&quot;]">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Delete File.xaml&quot;]">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>

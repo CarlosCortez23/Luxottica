@@ -1123,9 +1123,9 @@
     "restore": {
       "projectUniqueName": "Subprocess",
       "projectName": "Subprocess",
-      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Process GL Report\\Subprocesses\\.local",
+      "projectPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Process GL Report\\Subprocesses\\.local",
       "packagesPath": "C:\\Users\\UIPATH_27\\.nuget\\packages\\",
-      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\GitHub\\Luxottica-1\\EssilorLuxottica Projects\\LUX - 7.1 - Process GL Report\\Subprocesses\\.local"
+      "outputPath": "\\\\LRRBTUIPFSP100\\Profiles\\UIPATH_27\\Desktop\\LUX-7.1_Daily Fallout Report\\LUX - 7.1 - Process GL Report\\Subprocesses\\.local"
     },
     "frameworks": {
       "net461": {

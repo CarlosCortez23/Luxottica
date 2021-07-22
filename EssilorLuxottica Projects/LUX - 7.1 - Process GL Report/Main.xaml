@@ -67,7 +67,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process " sap:VirtualizedContainerService.HintSize="444,1016" sap2010:WorkflowViewState.IdRef="State_3">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process " sap:VirtualizedContainerService.HintSize="211,142" sap2010:WorkflowViewState.IdRef="State_3">
       <State.Entry>
         <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="418,560" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
@@ -328,21 +328,16 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Process stops here" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="124,104" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Process stops here" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="444,578" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                       <State.Entry>
-                        <TryCatch sap:VirtualizedContainerService.HintSize="418,565" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                        <TryCatch sap:VirtualizedContainerService.HintSize="418,438" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                           <TryCatch.Try>
-                            <Sequence DisplayName="End of process activities" sap:VirtualizedContainerService.HintSize="336,338" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="End of process activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delete Files From Temp Folder" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Subprocesses\Delete List of Files.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrReportsFolder">[Config.Item("strTempFolderPath").ToString]</InArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                              </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -362,14 +357,14 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                 </ActivityAction.Argument>
-                                <Sequence sap:VirtualizedContainerService.HintSize="336,345" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <Sequence sap:VirtualizedContainerService.HintSize="336,342" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Warn" Message="[&quot;Applications failed to close normally. &quot;+exception.Message+&quot; at Source: &quot;+exception.Source]" />
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="314.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+                                  <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Warn" Message="[&quot;Applications failed to close normally. &quot;+exception.Message+&quot; at Source: &quot;+exception.Source]" />
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                     </ui:InvokeWorkflowFile.Arguments>

@@ -1,6 +1,6 @@
 {
-  "name": "ESS1-LUX-01-RetrieveVendorMasterDataReports",
-  "description": "LUX - 01 - Retrieve Vendor Master Data Reports",
+  "name": "ESS1-LUX-7.1-ProcessGLReport",
+  "description": "LUX - 7.1 - Process GL Report",
   "main": "Main.xaml",
   "dependencies": {
     "BalaReva.Excel.Activities": "2020.3.3",
