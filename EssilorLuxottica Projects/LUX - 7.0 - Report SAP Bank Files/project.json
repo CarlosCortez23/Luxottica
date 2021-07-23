@@ -3,94 +3,26 @@
   "description": "LUX - 7.0 - Report SAP Bank Files",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
-    "UiPath.Excel.Activities": "[2.10.4]",
-    "UiPath.Mail.Activities": "[1.10.4]",
-    "UiPath.System.Activities": "[21.4.0]",
-    "UiPath.UIAutomation.Activities": "[21.4.3]"
+    "UiPath.Excel.Activities": "[2.5.4]",
+    "UiPath.Mail.Activities": "[1.4.1]",
+    "UiPath.System.Activities": "[19.4.1]",
+    "UiPath.UIAutomation.Activities": "[19.4.2]"
   },
-  "webServices": [],
-  "schemaVersion": "4.0",
-  "studioVersion": "20.4.3.0",
-  "projectVersion": "1.0.1",
+  "schemaVersion": "3.2",
+  "studioVersion": "19.4.5.0",
+  "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
-    "requiresUserInteraction": true,
-    "supportsPersistence": false,
     "excludedLoggedData": [
       "Private:*",
       "*password*"
-    ],
-    "executionType": "Workflow"
+    ]
   },
-  "designOptions": {
-    "projectProfile": "Developement",
-    "outputType": "Process",
-    "libraryOptions": {
-      "includeOriginalXaml": false,
-      "privateWorkflows": []
-    },
-    "fileInfoCollection": []
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
   },
-  "arguments": {
-    "input": [
-      {
-        "name": "in_IntDefaultDelay",
-        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_IntDefaultTimeoutS",
-        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_IntDefaultTimeoutM",
-        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_IntDefaultTimeoutL",
-        "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_StrCopyFromPath",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_StrCopyFromName",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_StrCopyToPath",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_StrCopyToName",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      },
-      {
-        "name": "in_StrEmailAddress",
-        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-        "required": false,
-        "hasDefault": false
-      }
-    ],
-    "output": []
-  },
-  "expressionLanguage": "VisualBasic"
+  "webServices": []
 }
