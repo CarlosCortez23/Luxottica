@@ -2,21 +2,11 @@
   <x:Members>
     <x:Property Name="in_StrDeleteFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
-    <x:Property Name="in_StrFalloutApplicationFinalPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_StrFalloutApplicationPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_StrFalloutReportsPath" Type="InArgument(x:String)" />
-    <x:Property Name="in_StrFalloutReportsFinalPath" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Daily_Fallout___Move_Files.in_StrFalloutApplicationFinalPath>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Daily_Fallout___Move_Files.in_StrFalloutApplicationFinalPath>
-  <this:Daily_Fallout___Move_Files.in_StrFalloutApplicationPath>
-    <InArgument x:TypeArguments="x:String" />
-  </this:Daily_Fallout___Move_Files.in_StrFalloutApplicationPath>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>676,880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>676,1100</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,7 +57,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Daily Fallout - Delete Files" sap:VirtualizedContainerService.HintSize="636,760" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Daily Fallout - Delete Files" sap:VirtualizedContainerService.HintSize="636,1020" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="LstFiles" />
     </Sequence.Variables>
@@ -91,9 +81,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
       </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID4">
+      <FlowStep x:Name="__ReferenceID1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,138.5</av:Point>
@@ -118,7 +108,6 @@
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,239.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,290.5 300,328.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Delete files" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[LstFiles]">
@@ -155,102 +144,10 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID1">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <av:Point x:Key="ShapeLocation">200,328.5</av:Point>
-                    <av:Size x:Key="ShapeSize">200,51</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">300,379.5 300,418.5</av:PointCollection>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Move Fallout Application" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Move File.xaml&quot;]">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrFalloutApplicationPath]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">Fallout Application.xlsm</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">["Fallout Application"+now.Date.ToString("MMddyyyy")+".xlsm"]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[in_StrFalloutApplicationFinalPath]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeWorkflowFile>
-                <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID2">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">200,418.5</av:Point>
-                        <av:Size x:Key="ShapeSize">200,51</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">300,469.5 300,509.5</av:PointCollection>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Files to Move" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Get List of Files.xaml&quot;]">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrFolderPath">[in_StrFalloutReportsPath]</InArgument>
-                        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_LstFileList">[LstReports]</OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:InvokeWorkflowFile>
-                    <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID3">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">200,509.5</av:Point>
-                            <av:Size x:Key="ShapeSize">200,51</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">310,300.5 310,338.5</av:PointCollection>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Move Reports" sap:VirtualizedContainerService.HintSize="352,345" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[LstReports]">
-                          <ui:ForEach.Body>
-                            <ActivityAction x:TypeArguments="x:String">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                                <Sequence.Variables>
-                                  <Variable x:TypeArguments="si:FileInfo" Name="FiFileDetail" />
-                                </Sequence.Variables>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Move Fallout Report" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Move File.xaml&quot;]">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrFalloutReportsPath]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[item]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[in_StrFalloutReportsFinalPath]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[item]</InArgument>
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:InvokeWorkflowFile>
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ForEach.Body>
-                        </ui:ForEach>
-                      </FlowStep>
-                    </FlowStep.Next>
-                  </FlowStep>
-                </FlowStep.Next>
-              </FlowStep>
-            </FlowStep.Next>
           </FlowStep>
         </FlowStep.Next>
       </FlowStep>
       <x:Reference>__ReferenceID0</x:Reference>
-      <x:Reference>__ReferenceID1</x:Reference>
-      <x:Reference>__ReferenceID2</x:Reference>
-      <x:Reference>__ReferenceID3</x:Reference>
     </Flowchart>
   </Sequence>
 </Activity>

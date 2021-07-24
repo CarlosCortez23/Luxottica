@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1385</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1422,1388</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -67,17 +67,16 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1422,1280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1382,1308" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Flowchart DisplayName="Process-Layer" sap:VirtualizedContainerService.HintSize="1380,1157" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart DisplayName="Process-Layer" sap:VirtualizedContainerService.HintSize="1360,1157" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <Flowchart.Variables>
         <Variable x:TypeArguments="s:Exception" Name="ProcessApplicationException" />
         <Variable x:TypeArguments="ui:BusinessRuleException" Name="ProcessBusinessException" />
@@ -101,11 +100,11 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">200,211</av:Point>
-            <av:Size x:Key="ShapeSize">200,82</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,293 300,326.5</av:PointCollection>
+            <av:Size x:Key="ShapeSize">200,78</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,289 300,326.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Create Report" sap:VirtualizedContainerService.HintSize="438,499" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Create Report" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,46 +112,26 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Subprocesses\CyberSource - Create Report.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Subprocesses\Bank Files - Create Report.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultDelay" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutM" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutL" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Config" />
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable" />
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookFilePath" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookFileName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrSheetName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookPassword" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                    <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config.Item(&quot;strComponentRoot&quot;).tostring" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrWorkbookFilePath]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword">[in_StrWorkbookPassword]</InArgument>
+                  <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[in_Config.Item("strComponentRoot").tostring]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -169,7 +148,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign DisplayName="Assign ProcessApplicationException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:Exception">[ProcessApplicationException]</OutArgument>
                   </Assign.To>
@@ -190,7 +169,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                 </ActivityAction.Argument>
-                <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign DisplayName="Assign ProcessBusinessException" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="ui:BusinessRuleException">[ProcessBusinessException]</OutArgument>
                   </Assign.To>

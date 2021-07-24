@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>989,858</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>674,833</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Utah_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,7 +70,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Precondition: &#xA;Postcondition:&#xA;&#xA;This process appends the information of the input TransactionItem to the Exports Reporting excel sheet so that it can be later emailed.&#xA;All Invokes need to be updated to the correct component files when the file structure is finalized.&#xA;All inputs and outputs need to be added." DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="654,753" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Precondition: &#xA;Postcondition:&#xA;&#xA;This process appends the information of the input TransactionItem to the Exports Reporting excel sheet so that it can be later emailed.&#xA;All Invokes need to be updated to the correct component files when the file structure is finalized.&#xA;All inputs and outputs need to be added." DisplayName="Delay Notifications - Create Report" sap:VirtualizedContainerService.HintSize="634,753" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -88,10 +88,10 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">250,228.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Append Item As Row In Excel" sap:VirtualizedContainerService.HintSize="376,293" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence DisplayName="Append Item As Row In Excel" sap:VirtualizedContainerService.HintSize="336,325" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strEmailBody" />
           <Variable x:TypeArguments="x:String" Name="strSubjectLine" />
@@ -103,24 +103,14 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Excel file path should be in_Config.Item(&quot;strMPFReportPath&quot;).ToString " />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke &quot;Excel - Append Range&quot;" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Append Range.xaml&quot;]">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Excel file path should be in_Config.Item(&quot;strReportPath&quot;).ToString " />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke &quot;Excel - Append Range&quot;" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Excel\Excel - Append Range.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">
-              <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_DtTable" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookFilePath" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookFileName" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrSheetName" />
-            </InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword">
-              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWorkbookPassword" />
-            </InArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtTable">[in_DtTable]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrWorkbookFilePath]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrWorkbookFileName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrSheetName]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword">[in_StrWorkbookPassword]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -134,11 +124,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">250,127.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">350,193.5 350,228.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">350,178.5 350,228.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Covert Item to Datarow" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Covert Item to Datarow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strEntity" />
           <Variable x:TypeArguments="x:String" Name="strState" />
@@ -152,8 +142,8 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Task takes in a TransactionItem and outputs a datarow that can be added to the excel file as a new row" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke &quot;Generic - Export Reporting - Convert Item to Datarow&quot;" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Generic\Generic - Export Reporting - Convert Item to Datarow.xaml&quot;]">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="314,93" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Task takes in a TransactionItem and outputs a datarow that can be added to the excel file as a new row" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke &quot;Generic - Export Reporting - Convert Item to Datarow&quot;" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Generic\Generic - Export Reporting - Convert Item to Datarow.xaml&quot;]">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtrNewRow">[in_DtTable]</OutArgument>
             <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
