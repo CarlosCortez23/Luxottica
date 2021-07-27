@@ -54,6 +54,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;-- TEMPLATE--" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="786,786" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -69,7 +70,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process " sap:VirtualizedContainerService.HintSize="211,142" sap2010:WorkflowViewState.IdRef="State_3">
       <State.Entry>
-        <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="418,560" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="418,600" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -330,15 +331,31 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Process stops here" DisplayName="End Process" sap:VirtualizedContainerService.HintSize="444,578" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                       <State.Entry>
-                        <TryCatch sap:VirtualizedContainerService.HintSize="418,438" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                        <TryCatch sap:VirtualizedContainerService.HintSize="418,565" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                           <TryCatch.Try>
-                            <Sequence DisplayName="End of process activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="End of process activities" sap:VirtualizedContainerService.HintSize="336,338" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Daily Fallout -  Send Email" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Subprocesses\Daily Fallout -  Send Email.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[CInt(Config.Item("DelayShort").ToString)]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[CInt(Config.Item("TimeoutShort").ToString)]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[CInt(Config.Item("TimeoutMedium").ToString)]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[CInt(Config.Item("TimeoutLong").ToString)]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrEmailAddress">[Config.Item("strToEmailAddress").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_ListAttachmentsFullPaths" />
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailAddress" />
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntPort">[Cint(Config.Item("strEmailPort").ToString)]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFromEmailPassword" />
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrServer">[Config.Item("strEmailServer").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrCCEmailAddress">[Config.Item("strCCEmailAddress").ToString]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">[Config.Item("strComponentRoot").ToString]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CloseAllApplications workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Framework\CloseAllApplications.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                 </ui:InvokeWorkflowFile.Arguments>

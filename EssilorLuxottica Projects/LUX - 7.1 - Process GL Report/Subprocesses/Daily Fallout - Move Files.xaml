@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>676,1140</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>676,1100</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -142,7 +142,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">310,300.5 310,338.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Move Reports" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[LstReports]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Move Reports" sap:VirtualizedContainerService.HintSize="352,345" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[LstReports]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
@@ -161,8 +161,8 @@
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrFalloutReportsPath]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[item]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[in_StrFalloutReportsFinalPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[item]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[item]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[in_StrFalloutReportsFinalPath]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
