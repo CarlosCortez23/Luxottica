@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1093</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>488,1267</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestAddQueueOrch_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -56,75 +56,71 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="510,1028" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="448,1187" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment out" sap:VirtualizedContainerService.HintSize="468,284" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <Sequence sap:VirtualizedContainerService.HintSize="426,146" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add queue item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="LUX-7.0-ReportSAPBankFiles" Reference="1527_07/28/2021">
+        <ui:AddQueueItem.ItemInformation>
+          <InArgument x:TypeArguments="x:String" x:Key="File Name">SAP-X15251-PAY000202012100951.txt</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Date">07/28/2021</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Status">Fail</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Note">Error</InArgument>
+        </ui:AddQueueItem.ItemInformation>
+      </ui:AddQueueItem>
+    </Sequence>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="426,877" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="284,206" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="410,799" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="TestAddQueueOrch" sap:VirtualizedContainerService.HintSize="388,675" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="dtQueue" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add queue item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="TX-1_ExportReportQueue" Reference="V14010_TX_Jan123123uary_21231231019123123">
-              <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="Company">V14010asdsa</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="State">NasdasdY</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Month">Januarasdy</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Year">201asdad9</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="EDIFilePath">Failure Message: TESTasdsaddas</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="EDIFileName">PATHasdasd</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="ReturnFilePath">PATHsdgf</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="ReturnFileName">PATHgjfgj</InArgument>
-              </ui:AddQueueItem.ItemInformation>
-            </ui:AddQueueItem>
+            <ui:ReadRange AddHeaders="True" DataTable="[dtQueue]" DisplayName="Read range" sap:VirtualizedContainerService.HintSize="366,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:A4" SheetName="Sheet1" WorkbookPath="Data\Input\testQueue.xlsx" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtQueue]" DisplayName="For each row" sap:VirtualizedContainerService.HintSize="366,424" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,277" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[row(&quot;columnA&quot;).ToString]" />
+                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add queue item" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="CE-05-ProcessLabsReportQueue">
+                      <ui:AddQueueItem.ItemInformation>
+                        <InArgument x:TypeArguments="x:String" x:Key="Argument1">[row(0).tostring]</InArgument>
+                      </ui:AddQueueItem.ItemInformation>
+                    </ui:AddQueueItem>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
           </Sequence>
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Sequence DisplayName="TestAddQueueOrch" sap:VirtualizedContainerService.HintSize="468,612" sap2010:WorkflowViewState.IdRef="Sequence_1">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="dtQueue" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange AddHeaders="True" DataTable="[dtQueue]" DisplayName="Read range" sap:VirtualizedContainerService.HintSize="426,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1:A4" SheetName="Sheet1" WorkbookPath="Data\Input\testQueue.xlsx" />
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtQueue]" DisplayName="For each row" sap:VirtualizedContainerService.HintSize="426,393" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-        <ui:ForEachRow.Body>
-          <ActivityAction x:TypeArguments="sd:DataRow">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[row(&quot;columnA&quot;).ToString]" />
-              <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add queue item" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="CE-05-ProcessLabsReportQueue">
-                <ui:AddQueueItem.ItemInformation>
-                  <InArgument x:TypeArguments="x:String" x:Key="Argument1">[row(0).tostring]</InArgument>
-                </ui:AddQueueItem.ItemInformation>
-              </ui:AddQueueItem>
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEachRow.Body>
-      </ui:ForEachRow>
-    </Sequence>
   </Sequence>
 </Activity>
