@@ -99,7 +99,7 @@
           <av:PointCollection x:Key="ConnectorLocation">450,185.02 450,215.02 449.895,215.02 449.895,230</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Generic - Get Files From Directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Generic\Generic - Get Files From Directory.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Generic - Get Files From Directory" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;Generic\Generic - Get Files From Directory.xaml&quot;]">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_StrPathFolder">[in_StrBankFilesPath]</InArgument>
           <OutArgument x:TypeArguments="scg:IEnumerable(x:Object)" x:Key="out_LstFiles">[lstSAPBankFiles]</OutArgument>
@@ -201,7 +201,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">140,825.5 140,855.5 121,855.5 121,880</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot + &quot;Excel\Excel - Read Range.xaml&quot;]">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrCashAccountsTemplateSheetName]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrCashAccountsTemplateFileName]</InArgument>
@@ -335,97 +335,6 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">30,34.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <Sequence DisplayName="Retrieve Info File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="727,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[strBankFileName]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[lstSAPBankFiles(intCounter).ToString.replace(in_StrBankFilesPath,"")]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <If Condition="[strBankFileName.Contains(&quot;SAP-X&quot;)]" sap:VirtualizedContainerService.HintSize="727,1486" sap2010:WorkflowViewState.IdRef="If_1">
-                <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="388,1338" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;File Name: &quot;+strBankFileName]" />
-                    <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[strBankCode]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[strBankFileName.Substring(5,4)]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Bank Code: &quot;+strBankCode]" />
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Excel - Read Range" sap:VirtualizedContainerService.HintSize="366,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\Excel\Excel - Read Range.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetName">[in_StrCashAccountsTemplateSheetName]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFileName">[in_StrCashAccountsTemplateFileName]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookFilePath">[in_StrCashAccountsTemplateFilePath]</InArgument>
-                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtExtractedData">[dtCashTemplate]</OutArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_BoolAddHeaders">[in_BoolAddHeaders]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrWorkbookPassword" />
-                        <InArgument x:TypeArguments="x:String" x:Key="in_StrRange">[in_StrRange]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;DT Original rows number: &quot;+dtCashTemplate.Rows.Count.ToString]" />
-                    <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="sd:DataTable">[dtCashTemplateFiltered]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="sd:DataTable">[dtCashTemplate.Select("[Bank Code]="+strBankCode+"").CopyToDataTable]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;DT Filtered rows number: &quot;+dtCashTemplateFiltered.Rows.Count.ToString]" />
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtCashTemplateFiltered]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="366,363" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                      <ui:ForEachRow.Body>
-                        <ActivityAction x:TypeArguments="sd:DataRow">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,215" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Variant Name: &quot;+row(&quot;Variant Name&quot;).ToString + &quot; Bank Code: &quot;+row(&quot;Bank Code&quot;).ToString + &quot; ACCT: &quot;+row(&quot;ACCT&quot;).ToString + &quot; BANK ACCT: &quot;+row(&quot;BANK ACCT&quot;).ToString + &quot; Bank Routing Number: &quot;+row(&quot;Bank Routing Number&quot;).ToString]" />
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEachRow.Body>
-                    </ui:ForEachRow>
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;The File Name: &quot; +strBankFileName +&quot; has incorrect format name.&quot;]" />
-                </If.Else>
-              </If>
-            </Sequence>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-    </FlowStep>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
