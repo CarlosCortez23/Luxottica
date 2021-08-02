@@ -1,0 +1,211 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_IntDefaultDelay" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutS" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutM" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IntDefaultTimeoutL" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_StrComponentRoot" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrAccount" Type="InArgument(x:String)" />
+    <x:Property Name="in_SstrPassword" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_StrWebsite" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrSubProcessRoot" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.in_IntDefaultDelay>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Main.in_IntDefaultDelay>
+  <this:Main.in_IntDefaultTimeoutS>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Main.in_IntDefaultTimeoutS>
+  <this:Main.in_IntDefaultTimeoutM>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Main.in_IntDefaultTimeoutM>
+  <this:Main.in_IntDefaultTimeoutL>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Main.in_IntDefaultTimeoutL>
+  <this:Main.in_StrAccount>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_StrAccount>
+  <this:Main.in_SstrPassword>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:Main.in_SstrPassword>
+  <this:Main.in_StrWebsite>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_StrWebsite>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>989,830</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 290,107.5 290,134.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID0</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID0">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">190,134.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="459,1151" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <Sequence sap:VirtualizedContainerService.HintSize="421,884" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Allow process started&quot;]" />
+            <ui:InvokeWorkflowFile ContinueOnError="False" DisplayName="OAuth2 - GSuite - Click Account" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;OAuth\OAuth2 - GSuite - Click Account.xaml&quot;]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StrAccount">[in_StrAccount]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="Type password" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;OAuth\OAuth2 - GSuite - Type Password.xaml&quot;]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultDelay" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutS" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutM" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutL" />
+                </InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="in_SstrPassword">
+                  <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_SstrPassword" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="OAuth2 - GSuite - Click Allow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;OAuth\OAuth2 - GSuite - Click Allow.xaml&quot;]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Gmail - SignOut" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrSubProcessRoot+&quot;Gmail\Gmail SignOut.xaml&quot;]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultDelay" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutS" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutM" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_IntDefaultTimeoutL" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StrComponentRoot">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrComponentRoot" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StrWebsite">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrWebsite" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Allow process Ended&quot;]" />
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="425,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Authentification was not asked&quot;]" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+        <TryCatch.Finally>
+          <ui:InvokeWorkflowFile ContinueOnError="True" DisplayName="OAuth2 - GSuite - Click Close" sap:VirtualizedContainerService.HintSize="368,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;Chrome\Chrome - Close.xaml&quot;]">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </TryCatch.Finally>
+      </TryCatch>
+    </FlowStep>
+  </Flowchart>
+</Activity>
