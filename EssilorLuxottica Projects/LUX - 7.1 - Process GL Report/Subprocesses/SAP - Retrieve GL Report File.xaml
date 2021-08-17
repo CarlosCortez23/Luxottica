@@ -75,6 +75,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Excel - Retrieve GL Report File" sap:VirtualizedContainerService.HintSize="616,1670" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -301,25 +302,19 @@
                                               <av:PointCollection x:Key="ConnectorLocation">170,980.5 170,1019.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                            <ui:CommentOut.Body>
-                                              <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Select Spreadsheet option" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Export Button Dropdown - Click Spreadsheet Option.xaml&quot;]">
-                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
-                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:InvokeWorkflowFile>
-                                              </Sequence>
-                                            </ui:CommentOut.Body>
-                                          </ui:CommentOut>
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Select Spreadsheet Window - Click Continue" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="[in_strComponentRoot +&quot;SAP\SAP - Select Spreadsheet Window - Click Continue.xaml&quot;]">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:InvokeWorkflowFile>
                                           <FlowStep.Next>
                                             <FlowStep x:Name="__ReferenceID10">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -329,7 +324,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">170,1070.5 170,1110.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type Save path" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type Save path" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -377,8 +372,13 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                                                         <ui:CommentOut.Body>
-                                                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Allow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - SAP GUI Security Window - Click Allow.xaml&quot;]">
+                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Allow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - SAP GUI Security Window - Click Allow.xaml&quot;]">
                                                               <ui:InvokeWorkflowFile.Arguments>
                                                                 <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                                                 <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -589,14 +589,14 @@
                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="673,2869" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+                              <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="673,2996" sap2010:WorkflowViewState.IdRef="DoWhile_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <DoWhile.Condition>[intCounter &lt; intIterationNum]</DoWhile.Condition>
-                                <Sequence sap:VirtualizedContainerService.HintSize="647,2707" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                <Sequence sap:VirtualizedContainerService.HintSize="647,2834" sap2010:WorkflowViewState.IdRef="Sequence_1">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="strFileName" />
                                   </Sequence.Variables>
@@ -730,7 +730,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Execute" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - GL Report Screen - Click Execute Button.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Execute" sap:VirtualizedContainerService.HintSize="625,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - GL Report Screen - Click Execute Button.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -743,7 +743,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Export" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - GL Report Screen - Click Export Button.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Export" sap:VirtualizedContainerService.HintSize="625,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - GL Report Screen - Click Export Button.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -756,7 +756,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <Assign DisplayName="Create file name" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign DisplayName="Create file name" sap:VirtualizedContainerService.HintSize="625,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[strFileName]</OutArgument>
                                     </Assign.To>
@@ -764,7 +764,20 @@
                                       <InArgument x:TypeArguments="x:String">["gl_report_"+intCounter.ToString+"_"+now.Date.ToString("MMddyyyy")+".xlsx"]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type Save path" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Select Spreadsheet Window - Click Continue" sap:VirtualizedContainerService.HintSize="625,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="[in_strComponentRoot +&quot;SAP\SAP - Select Spreadsheet Window - Click Continue.xaml&quot;]">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type Save path" sap:VirtualizedContainerService.HintSize="625,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -779,7 +792,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Click Save.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="625,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="[in_strComponentRoot+&quot;SAP\SAP - Save-As Window - Click Save.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
@@ -792,7 +805,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="625,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                                     <ui:CommentOut.Body>
                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -822,7 +835,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:CommentOut>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="625,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                                     <ui:CommentOut.Body>
                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -852,7 +865,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:CommentOut>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="625,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                                     <ui:CommentOut.Body>
                                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -877,7 +890,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:CommentOut>
-                                  <ui:CloseApplication DisplayName="Close Excel file" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                                  <ui:CloseApplication DisplayName="Close Excel file" sap:VirtualizedContainerService.HintSize="625,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
                                     <ui:CloseApplication.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1ffd78548df45d4de66c32b6f1b07ce3" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='* Excel' /&gt;" WaitForReady="INTERACTIVE" />
                                     </ui:CloseApplication.Target>
