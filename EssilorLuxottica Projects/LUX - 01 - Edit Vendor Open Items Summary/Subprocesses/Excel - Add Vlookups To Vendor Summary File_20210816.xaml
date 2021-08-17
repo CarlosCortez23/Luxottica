@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>676,1375</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>676,1335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CleanSAPReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -73,6 +73,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Excel - Add Vlookups To Vendor Summary File" sap:VirtualizedContainerService.HintSize="636,1255" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -197,13 +198,13 @@
                         <av:PointCollection x:Key="ConnectorLocation">300,675.5 299.895,675.5 299.895,700</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="468,1634" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSummary]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="559,7715" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="438,1486" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="529,7567" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="ui:GenericValue" Name="GvVlookupResult" />
                             </Sequence.Variables>
@@ -212,7 +213,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+                            <Assign sap:VirtualizedContainerService.HintSize="507,60" sap2010:WorkflowViewState.IdRef="Assign_47">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
                               </Assign.To>
@@ -220,37 +221,50 @@
                                 <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <TryCatch DisplayName="Try Catch Lookup BU" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                            <TryCatch DisplayName="Try Catch Lookup BU" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="CoCd" LookupValue="[row(&quot;  CoCd&quot;).ToString]" TargetColumnName="BU">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="CoCd" LookupValue="[row(&quot;  CoCd&quot;).ToString]" TargetColumnName="BU">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_48">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("BU")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("BU")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -273,37 +287,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch vendor name" sap:VirtualizedContainerService.HintSize="418,473" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                            <TryCatch DisplayName="Try Catch vendor name" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn3]">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn3]">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_49">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Vendor Name")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Vendor Name")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -326,37 +353,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Microcategory" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                            <TryCatch DisplayName="Try Catch Microcategory" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_3" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn9]">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_3" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn9]">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_50">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Microcategory")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Microcategory")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -379,37 +419,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Macrocategory" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                            <TryCatch DisplayName="Try Catch Macrocategory" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_4" LookupColumnName="CODE" LookupValue="[row(&quot;Microcategory&quot;).ToString.Substring(0,4)]" TargetColumnName="Macro Category">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_4" LookupColumnName="CODE" LookupValue="[row(&quot;Microcategory&quot;).ToString.Substring(0,4)]" TargetColumnName="Macro Category">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_51">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Macrocategory")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Macrocategory")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -432,37 +485,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Procurement Area" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                            <TryCatch DisplayName="Try Catch Procurement Area" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_5" LookupColumnName="CODE" LookupValue="[row(&quot;Microcategory&quot;).ToString.Substring(0,4)]" TargetColumnName="Procurement Area">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_5" LookupColumnName="CODE" LookupValue="[row(&quot;Microcategory&quot;).ToString.Substring(0,4)]" TargetColumnName="Procurement Area">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_52">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Procurement Area")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_5">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Procurement Area")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -485,10 +551,10 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch 3rd party" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                            <TryCatch DisplayName="Try Catch 3rd party" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -528,10 +594,10 @@
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -551,37 +617,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Vendor PM" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                            <TryCatch DisplayName="Try Catch Vendor PM" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn7]">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn7]">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_55">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Vendor PM")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Vendor PM")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -604,37 +683,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Pay Method" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                            <TryCatch DisplayName="Try Catch Pay Method" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnName="PM Code" LookupValue="[row(&quot;Vendor PM&quot;).ToString]" TargetColumnName="Pay Method">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnName="PM Code" LookupValue="[row(&quot;Vendor PM&quot;).ToString]" TargetColumnName="Pay Method">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_56">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Pay Method")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Pay Method")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -657,38 +749,51 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch PayT" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                            <TryCatch DisplayName="Try Catch PayT" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_9" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn6]">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DtMasterDataTable]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_9" LookupColumnName="[strMasterDTColumn8]" LookupValue="[row(&quot;Acct + CoCd&quot;).ToString]" TargetColumnName="[strMasterDTColumn6]">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_57">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("PayT")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("PayT")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -711,37 +816,50 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <TryCatch DisplayName="Try Catch Payment Terms" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                            <TryCatch DisplayName="Try Catch Payment Terms" sap:VirtualizedContainerService.HintSize="507,621" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                <Sequence sap:VirtualizedContainerService.HintSize="489,394" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_10" LookupColumnName="Pay Terms" LookupValue="[row(&quot;PayT&quot;).ToString]" TargetColumnName="Pay Terms Text">
+                                  <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtVlookups]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="467,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_10" LookupColumnName="Pay Terms" LookupValue="[row(&quot;PayT&quot;).ToString]" TargetColumnName="Pay Terms Text">
                                     <ui:LookupDataTable.CellValue>
                                       <OutArgument x:TypeArguments="ui:GenericValue">[GvVlookupResult]</OutArgument>
                                     </ui:LookupDataTable.CellValue>
                                   </ui:LookupDataTable>
-                                  <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_58">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("Payment Terms")]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <If Condition="[String.IsNullOrEmpty( GvVlookupResult)]" DisplayName="If  GvVlookup is null" sap:VirtualizedContainerService.HintSize="467,208" sap2010:WorkflowViewState.IdRef="If_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If.Then>
+                                      <Throw DisplayName="Throw" Exception="[New Exception(&quot;The desired value was not found&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                                    </If.Then>
+                                    <If.Else>
+                                      <Assign DisplayName="Set value in table" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Object">[row("Payment Terms")]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Object">[GvVlookupResult]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
                                 </Sequence>
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_13">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="493,21" sap2010:WorkflowViewState.IdRef="Catch`1_13">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -764,13 +882,7 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <If Condition="[row(&quot;Payment Block&quot;).ToString =&quot;A&quot; or row(&quot;Payment Block&quot;).ToString =&quot;B&quot; or row(&quot;Payment Block&quot;).ToString =&quot;R&quot;]" sap:VirtualizedContainerService.HintSize="416,51" sap2010:WorkflowViewState.IdRef="If_11">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[row(&quot;Payment Block&quot;).ToString =&quot;A&quot; or row(&quot;Payment Block&quot;).ToString =&quot;B&quot; or row(&quot;Payment Block&quot;).ToString =&quot;R&quot;]" sap:VirtualizedContainerService.HintSize="507,432" sap2010:WorkflowViewState.IdRef="If_11">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="264,284" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -797,7 +909,7 @@
                                 </Sequence>
                               </If.Then>
                             </If>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,261" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="507,261" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,183" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                   <sap:WorkflowViewStateService.ViewState>
