@@ -64,7 +64,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="SAP - Login" sap:VirtualizedContainerService.HintSize="714,1721" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="SAP - Retrieve GL Bank Report" sap:VirtualizedContainerService.HintSize="714,1721" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -76,9 +76,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID6">
+    <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,174.02</av:Point>
@@ -127,7 +127,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,314.02</av:Point>
                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,365.02 300,385.02</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,365.02 300,404.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Click Spreadsheet Option" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Export Button Dropdown - Click Spreadsheet Option.xaml&quot;]">
@@ -144,63 +144,63 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID2">
+                <FlowStep x:Name="__ReferenceID6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,385.02</av:Point>
+                      <av:Point x:Key="ShapeLocation">200,404.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,436.02 300,454.02</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">300,455.5 300,485.02</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" ContinueOnError="True" DisplayName="Wait for save as window" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
-                    <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="72f643e31a504033d1c1f1dc1906c011" Selector="&lt;wnd app='saplogon.exe' title='Save As' /&gt;" TimeoutMS="240000" WaitForReady="INTERACTIVE" />
-                    </ui:WaitUiElementAppear.Target>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Select Spreadsheet Window - Click Continue" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Select Spreadsheet Window - Click Continue.xaml&quot;]">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:WaitUiElementAppear>
+                  </ui:InvokeWorkflowFile>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID3">
+                    <FlowStep x:Name="__ReferenceID2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,454.02</av:Point>
+                          <av:Point x:Key="ShapeLocation">200,485.02</av:Point>
                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,505.02 300,524.02</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">300,536.02 300,574.02</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Save-As Window - Type File Path" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFilePath">[in_StrFilePath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrFileName]</InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
+                      <ui:WaitUiElementAppear FoundElement="{x:Null}" ContinueOnError="True" DisplayName="Wait for save as window" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+                        <ui:WaitUiElementAppear.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="72f643e31a504033d1c1f1dc1906c011" Selector="&lt;wnd app='saplogon.exe' title='Save As' /&gt;" TimeoutMS="240000" WaitForReady="INTERACTIVE" />
+                        </ui:WaitUiElementAppear.Target>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
+                      </ui:WaitUiElementAppear>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID4">
+                        <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,524.02</av:Point>
+                              <av:Point x:Key="ShapeLocation">200,574.02</av:Point>
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,575.02 300,594.02</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">300,625.02 300,644.02</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Save-As Window - Click Save" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Save-As Window - Click Save.xaml&quot;]">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Save-As Window - Type File Path" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Save-As Window - Type File Path.xaml&quot;]">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFilePath">[in_StrFilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrFileName]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -209,23 +209,47 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID5">
+                            <FlowStep x:Name="__ReferenceID4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,594.02</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,644.02</av:Point>
                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,695.02 300,714.02</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:CloseApplication DisplayName="Close Excel" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
-                                <ui:CloseApplication.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73527eeadf67bc72e5299412a4a918f4" Selector="&lt;wnd app='excel.exe' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="COMPLETE" />
-                                </ui:CloseApplication.Target>
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Save-As Window - Click Save" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;SAP\SAP - Save-As Window - Click Save.xaml&quot;]">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                              </ui:CloseApplication>
+                              </ui:InvokeWorkflowFile>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,714.02</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:CloseApplication DisplayName="Close Excel" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                                    <ui:CloseApplication.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="73527eeadf67bc72e5299412a4a918f4" Selector="&lt;wnd app='excel.exe' /&gt;" TimeoutMS="[in_IntDefaultTimeoutL]" WaitForReady="COMPLETE" />
+                                    </ui:CloseApplication.Target>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:CloseApplication>
+                                </FlowStep>
+                              </FlowStep.Next>
                             </FlowStep>
                           </FlowStep.Next>
                         </FlowStep>
@@ -245,5 +269,6 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>
