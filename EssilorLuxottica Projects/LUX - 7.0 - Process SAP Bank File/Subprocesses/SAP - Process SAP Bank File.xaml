@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>654,1251</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,1331</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -66,7 +66,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="SAP - Process SAP Bank File" sap:VirtualizedContainerService.HintSize="614,1171" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="SAP - Process SAP Bank File" sap:VirtualizedContainerService.HintSize="614,1321" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolInformationWindow" />
     </Flowchart.Variables>
@@ -76,7 +76,7 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134.5</av:PointCollection>
-        <x:Double x:Key="Height">1135.02</x:Double>
+        <x:Double x:Key="Height">1285.02</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -210,7 +210,7 @@
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">200,724.02</av:Point>
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,775.02 300,814.02</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">300,775.02 300,804.02</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Main Lockbox Program - Click Lockbox File Browser Button" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Main Lockbox Program - Click Lockbox File Browser Button.xaml&quot;]">
@@ -227,22 +227,20 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID4">
+                            <FlowStep x:Name="__ReferenceID10">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,814.02</av:Point>
+                                  <av:Point x:Key="ShapeLocation">200,804.02</av:Point>
                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,865.02 300,904.02</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,855.02 300,894.02</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - File Explorer Window - Type Into File Name field" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - File Explorer Window - Type Into File Name field.xaml&quot;]">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - File Explorer Window - Click This PC" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="\\LRRBTUIPFSP100\Profiles\Uipath_26\Desktop\EssilorLuxottica Projects\Components\SAP\SAP - File Explorer Window - Click This PC.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
                                   <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFilePath">[in_StrMoveFromFolderName]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrMoveFromFileName]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -251,20 +249,22 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID5">
+                                <FlowStep x:Name="__ReferenceID4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,904.02</av:Point>
+                                      <av:Point x:Key="ShapeLocation">200,894.02</av:Point>
                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,955.02 300,994.02</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,945.02 300,984.02</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - File Explorer Window - Click Open" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - File Explorer Window - Click Open.xaml&quot;]">
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - File Explorer Window - Type Into File Name field" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - File Explorer Window - Type Into File Name field.xaml&quot;]">
                                     <ui:InvokeWorkflowFile.Arguments>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
                                       <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrFilePath">[in_StrMoveFromFolderName]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrMoveFromFileName]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -273,52 +273,42 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID6">
+                                    <FlowStep x:Name="__ReferenceID5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">200,994.02</av:Point>
+                                          <av:Point x:Key="ShapeLocation">200,984.02</av:Point>
                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">300,1045.02 300,1084.02</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">300,1035.02 300,1074.02</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Main Lockbox Program - Click Execute" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Main Lockbox Program - Click Execute.xaml&quot;]">
-                                              <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
-                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
-                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
-                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
-                                              </ui:InvokeWorkflowFile.Arguments>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </ui:InvokeWorkflowFile>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                      </ui:CommentOut>
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - File Explorer Window - Click Open" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - File Explorer Window - Click Open.xaml&quot;]">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID7">
+                                        <FlowStep x:Name="__ReferenceID6">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">200,1084.02</av:Point>
+                                              <av:Point x:Key="ShapeLocation">200,1074.02</av:Point>
                                               <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">300,1125.02 300,1154.02</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="System - Move File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;System\System - Move File.xaml&quot;]">
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - Main Lockbox Program - Click Execute" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - Main Lockbox Program - Click Execute.xaml&quot;]">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrMoveFromFolderName]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[in_StrMoveFromFileName]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[in_StrMoveToFileName]</InArgument>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[in_StrMoveToFolderName]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -326,6 +316,53 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                           </ui:InvokeWorkflowFile>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID11">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">200,1154.02</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">300,1205.02 300,1234.02</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="SAP - SAP GUI Security Window - Click Allow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;SAP\SAP - SAP GUI Security Window - Click Allow.xaml&quot;]">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultDelay">[in_IntDefaultDelay]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutS">[in_IntDefaultTimeoutS]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutM">[in_IntDefaultTimeoutM]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntDefaultTimeoutL">[in_IntDefaultTimeoutL]</InArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:InvokeWorkflowFile>
+                                              <FlowStep.Next>
+                                                <FlowStep x:Name="__ReferenceID7">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">200,1234.02</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="System - Move File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="[in_StrComponentRoot +&quot;System\System - Move File.xaml&quot;]">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrMoveFromFolderName]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[in_StrMoveFromFileName]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[in_StrMoveToFileName]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[in_StrMoveToFolderName]</InArgument>
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:InvokeWorkflowFile>
+                                                </FlowStep>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
                                         </FlowStep>
                                       </FlowStep.Next>
                                     </FlowStep>
@@ -354,5 +391,7 @@
     <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
   </Flowchart>
 </Activity>
