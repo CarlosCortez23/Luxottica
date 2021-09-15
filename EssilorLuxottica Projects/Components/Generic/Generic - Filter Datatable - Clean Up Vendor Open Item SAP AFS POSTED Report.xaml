@@ -235,7 +235,6 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.ItemArray(0),row.ItemArray(1),row.ItemArray(2),row.ItemArray(3),row.ItemArray(4),row.ItemArray(5),row.ItemArray(6),row.ItemArray(7),row.ItemArray(8),row.ItemArray(9),row.ItemArray(10),row.ItemArray(11),row.ItemArray(12),row.ItemArray(13),row.ItemArray(14),row.ItemArray(15),row.ItemArray(16),row.ItemArray(17)}]" DataTable="[out_DtCleanReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="222,146" sap2010:WorkflowViewState.IdRef="Sequence_28">
@@ -244,7 +243,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.ItemArray(0),row.ItemArray(1),row.ItemArray(2),row.ItemArray(3),row.ItemArray(4),row.ItemArray(5),row.ItemArray(6),row.ItemArray(7),row.ItemArray(8),row.ItemArray(9),row.ItemArray(10),row.ItemArray(11),row.ItemArray(12),row.ItemArray(13),row.ItemArray(14),row.ItemArray(15),row.ItemArray(16),row.ItemArray(18)}]" DataTable="[out_DtCleanReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.ItemArray(0),row.ItemArray(1),row.ItemArray(2),row.ItemArray(3),row.ItemArray(4),row.ItemArray(5),row.ItemArray(6),row.ItemArray(7),row.ItemArray(8),row.ItemArray(9),row.ItemArray(10),row.ItemArray(11),row.ItemArray(12),row.ItemArray(13),row.ItemArray(14),row.ItemArray(15),row.ItemArray(16),row.ItemArray(17)}]" DataTable="[out_DtCleanReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                           </Sequence>
                         </ui:CommentOut.Body>
                         <sap:WorkflowViewStateService.ViewState>
@@ -254,6 +253,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.ItemArray(0),row.ItemArray(1),row.ItemArray(2),row.ItemArray(3),row.ItemArray(4),row.ItemArray(5),row.ItemArray(6),row.ItemArray(7),row.ItemArray(8),row.ItemArray(9),row.ItemArray(10),row.ItemArray(11),row.ItemArray(12),row.ItemArray(13),row.ItemArray(14),row.ItemArray(15),row.ItemArray(16),row.ItemArray(18)}]" DataTable="[out_DtCleanReport]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                     </Sequence>
                   </If.Else>
                 </If>
