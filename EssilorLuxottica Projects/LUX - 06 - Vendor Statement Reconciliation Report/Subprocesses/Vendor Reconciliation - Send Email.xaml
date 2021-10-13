@@ -131,7 +131,7 @@ vbNewLine +
             <OutArgument x:TypeArguments="x:String">[strSubjectLine]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">["Vendor Statement Reconciliation Report "+now.ToString("dd/MM/yyyy")]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Vendor Statement Reconciliation Report "+now.ToString("MM/dd/yyyy")]</InArgument>
           </Assign.Value>
         </Assign>
         <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Ess.ALL_ProcessAutomationEmailAppCredentials" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[strPassword]" Username="[strUserName]" />
