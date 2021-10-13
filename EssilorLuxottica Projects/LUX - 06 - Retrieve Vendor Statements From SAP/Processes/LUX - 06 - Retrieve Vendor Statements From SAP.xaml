@@ -58,7 +58,6 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="LUX - 06 - Retrieve Vendor Statements From SAP" sap:VirtualizedContainerService.HintSize="1506,2383" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -479,7 +478,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">300,1509 300,1566.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Filter SAP Vendor Reconciliation Report" sap:VirtualizedContainerService.HintSize="200,78" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+                                        <TryCatch sap2010:Annotation.AnnotationText="AE/BE Handling Necessary" DisplayName="Filter SAP Vendor Reconciliation Report" sap:VirtualizedContainerService.HintSize="418,487" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
