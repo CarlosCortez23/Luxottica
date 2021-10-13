@@ -80,6 +80,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Create Vendor StatementCreate Vendor Statement" sap:VirtualizedContainerService.HintSize="714,811" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -227,10 +228,10 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="System - Move File" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[in_StrComponentRoot+&quot;System\System - Move File.xaml&quot;]">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromPath">[in_StrReconciliationsTempPath]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFromName">[in_StrVendorStatementFileName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyToName">[in_StrVendorStatementFileName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyToPath">[in_StrVendorStatementPath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFolderName">[in_StrReconciliationsTempPath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveFromFileName">[in_StrVendorStatementFileName]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFileName">[in_StrVendorStatementFileName]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrMoveToFolderName">[in_StrVendorStatementPath]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
